@@ -1,32 +1,20 @@
-import { useState } from "react"
+import {BrowserRouter as Router, Routes, Route,Link} from 'react-router-dom'
 import "./App.css"
-import Header from "./Components/Header"
-import Hero from "./Components/Hero"
-import TemplateSection from "./Components/TemplateSection"
-import ResumeRenderer from "./ResumeRenderer/ResumeRenderer"
-import {templates} from "./data/templates"
-import mockUserData from "./data/mockUserData"
+import HomePage from "./HomePage"
+import ResumePage from './ResumePage'
 
 export default function App() {
-    const [selectedTemplate, setSelectedTemplate] = useState(null);
-    const handleSelectTemplate = (template) => {
-        setSelectedTemplate(template);
-        setTimeout(() => {
-            document
-                .getElementById("resume-view")
-                ?.scrollIntoView({ behavior: "smooth" });
-        }, 100);
-    };
+    
 
     return (
         <>
-            <Header />
-            <Hero />
-            <TemplateSection templates={templates}
-                onSelectTemplate={handleSelectTemplate} />
-            {selectedTemplate && (
-                <ResumeRenderer template={selectedTemplate} data={mockUserData} />
-            )}
+        <Router>
+            <Routes>
+                <Route path='/' element={<HomePage />} />
+                <Route path='/resume/:templateId' element={<ResumePage/>}/>
+            </Routes>
+        </Router>
+            
         </>
     )
 }

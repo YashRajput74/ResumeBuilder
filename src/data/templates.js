@@ -1,4 +1,5 @@
 const template1 = {
+    name: "Modern Blue",
     layout: {
         grid: {
             templateRows: 'auto 1fr',
@@ -19,6 +20,7 @@ const template1 = {
     }
 };
 const template2 = {
+    name: "Clean Classic",
     layout: {
         grid: {
             templateRows: 'auto 1fr',
