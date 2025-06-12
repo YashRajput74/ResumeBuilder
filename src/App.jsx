@@ -4,7 +4,7 @@ import Header from "./Components/Header"
 import Hero from "./Components/Hero"
 import TemplateSection from "./Components/TemplateSection"
 import ResumeRenderer from "./Components/ResumeRenderer"
-import templates from "./data/templates"
+import {templates} from "./data/templates"
 import mockUserData from "./data/mockUserData"
 
 export default function App() {

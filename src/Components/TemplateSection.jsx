@@ -6,17 +6,7 @@ export default function TemplateSection({templates,onSelectTemplate}) {
                 {templates.map((template, index) => (
                     <div key={index} className="templateCard" onClick={()=>{onSelectTemplate(template)}}>
                         <div className="templatePreview">
-                            {template.sections.map((section, i) => (
-                                <div
-                                    key={i}
-                                    style={{
-                                        width: section.style.width,
-                                        height: "10px",
-                                        background: section.style.background,
-                                        marginBottom: "4px"
-                                    }}
-                                ></div>
-                            ))}
+                            
                         </div>
                         <p>{template.name}</p>
                     </div>

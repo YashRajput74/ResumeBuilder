@@ -1,41 +1,38 @@
 const mockUserData = {
+    name: "Ayesha Takia",
     firstName: "Ayesha",
     lastName: "Takia",
-    dateOfBirth: "2025-09-15",
     email: "ayesha.takia@example.com",
     phoneNo: "+91 9876543210",
     address: "123, Park Lane, Delhi, India",
-    summary: "Enthusiastic and detail-oriented web developer with a passion for building dynamic user interfaces using React. Strong background in team projects and API integrations.",
-    profilePhoto: "", 
+    summary: "Enthusiastic and detail-oriented web developer...",
+    profilePhoto: "",
+    linkedin: "linkedin.com/in/ayeshatakia",
+    skype: "ayesha.takia",
+
+    skills: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
+
     projects: [
         {
             Title: "Personal Portfolio Website",
             Link: "https://ayesha-portfolio.netlify.app",
-            Description: "Developed a responsive personal portfolio using React and CSS showcasing projects and blogs."
+            Description: "Developed a responsive personal portfolio..."
         },
         {
             Title: "Weather App",
             Link: "https://github.com/ayesha/weather-app",
-            Description: "A weather forecast app built with OpenWeatherMap API, displaying current weather by location."
+            Description: "A weather forecast app built with..."
         }
-    ],
-
-    skills: [
-        { skill: "JavaScript" },
-        { skill: "React" },
-        { skill: "HTML5" },
-        { skill: "CSS3" },
-        { skill: "Git & GitHub" }
     ],
 
     achievements: [
         {
             Title: "Top 5 Finalist - Hackathon",
-            Description: "Built a disaster alert app during a 24-hour college hackathon."
+            Description: "Built a disaster alert app during a 24-hour..."
         },
         {
             Title: "Open Source Contributor",
-            Description: "Contributed to documentation and bug fixes in a React open-source project."
+            Description: "Contributed to documentation and bug fixes..."
         }
     ],
 
@@ -46,15 +43,15 @@ const mockUserData = {
             City: "Delhi",
             "Start Date": "2017",
             "End Date": "2019",
-            Description: "Completed high school with a focus on PCM and Computer Science."
+            Description: "Completed high school with focus on..."
         },
         {
             School: "XYZ Institute of Technology",
             Degree: "B.Tech in Computer Science",
             City: "Delhi",
             "Start Date": "2019",
-            "End Date" : "2023",
-            Description: "Learned web development, data structures, and software engineering."
+            "End Date": "2023",
+            Description: "Learned web development, DSA, etc."
         }
     ],
 
@@ -63,9 +60,13 @@ const mockUserData = {
             Role: "Frontend Developer Intern",
             Organization: "TechNova Pvt Ltd",
             Location: "Remote",
-            "Start Date": 2023,
-            "End Date": 2024,
-            Description: "Built reusable React components, integrated REST APIs, and improved UI performance."
+            "Start Date": "2023",
+            "End Date": "2024",
+            Description: [
+                "Built reusable React components",
+                "Integrated REST APIs",
+                "Improved UI performance"
+            ]
         }
     ],
 
@@ -73,12 +74,12 @@ const mockUserData = {
         {
             Title: "React - Frontend Library",
             Organization: "freeCodeCamp",
-            Date: 2023
+            Date: "2023"
         },
         {
             Title: "Responsive Web Design",
             Organization: "Coursera",
-            Date: 2022
+            Date: "2022"
         }
     ]
 };
