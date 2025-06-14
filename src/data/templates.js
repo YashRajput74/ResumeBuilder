@@ -1,4 +1,5 @@
 const template1 = {
+    id: 1,
     name: "Modern Blue",
     layout: {
         grid: {
@@ -20,6 +21,7 @@ const template1 = {
     }
 };
 const template2 = {
+    id: 2,
     name: "Clean Classic",
     layout: {
         grid: {

@@ -8,7 +8,7 @@ import jsPDF from "jspdf";
 
 export default function ResumePage() {
     const { templateId } = useParams();
-    const template = templates[templateId];
+    const template  = templates.find(t => t.id === parseInt(templateId));
     const navigate = useNavigate();
     const resumeRef = useRef();
 
