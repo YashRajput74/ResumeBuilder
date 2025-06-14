@@ -53,9 +53,15 @@ export default function ResumeRenderer({ template, data }) {
         >
             {grid.areas.map((area, index) => (
                 <div key={index} style={{ gridArea: area.name }}>
-                    {area.sections.map((section) => (
-                        <div key={section}>{renderSection(section)}</div>
-                    ))}
+                    {area.sections.map((section) => {
+                        const sectionStyle = template.sectionStyles?.[section] || {};
+                        return (
+                            <div key={section} style={sectionStyle}>
+                                {renderSection(section)}
+                            </div>
+                        );
+                    })}
+
                 </div>
             ))}
         </div>
