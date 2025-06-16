@@ -7,6 +7,8 @@ const mockUserData = {
     address: "123, Park Lane, Delhi, India",
     summary: "Enthusiastic and detail-oriented web developer...",
     profilePhoto: "",
+    portfolio: "",
+    github:"",
     linkedin: "linkedin.com/in/ayeshatakia",
     skype: "ayesha.takia",
 
