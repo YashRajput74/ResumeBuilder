@@ -18,26 +18,35 @@ const mockUserData = {
         {
             Title: "Personal Portfolio Website",
             Link: "https://ayesha-portfolio.netlify.app",
+            GithubLink: "",
             Description: "Developed a responsive personal portfolio..."
         },
         {
             Title: "Weather App",
             Link: "https://github.com/ayesha/weather-app",
+            GithubLink: "",
             Description: "A weather forecast app built with..."
         },
         {
             Title: "Personal Portfolio Website",
             Link: "https://ayesha-portfolio.netlify.app",
+            GithubLink: "",
             Description: "Developed a responsive personal portfolio..."
         },
         {
             Title: "Weather App",
             Link: "https://github.com/ayesha/weather-app",
-            Description: "A weather forecast app built with..."
+            GithubLink: "",
+            Description: [
+                "Built a weather forecast app using OpenWeatherMap API.",
+                "Implemented search by city functionality.",
+                "Displayed real-time weather data using React."
+            ]
         },
         {
             Title: "Personal Portfolio Website",
             Link: "https://ayesha-portfolio.netlify.app",
+            GithubLink: "",
             Description: "Developed a responsive personal portfolio..."
         }
     ],

@@ -104,6 +104,13 @@
     text-align: left;
     margin-bottom: 20px;
 }
+.icon {
+  font-size: 0.65rem;
+  margin-left: 0.1rem;
+  margin-bottom: 0.3rem;
+  vertical-align: middle;
+}
+
 .eachProject{
     margin-top: 5px;
     margin-bottom: 10px;
