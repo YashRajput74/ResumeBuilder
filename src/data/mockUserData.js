@@ -7,12 +7,12 @@ const mockUserData = {
     address: "123, Park Lane, Delhi, India",
     summary: "Enthusiastic and detail-oriented web developer...",
     profilePhoto: "",
-    portfolio: "",
-    github:"",
+    portfolio: "https://ayesha-portfolio.netlify.app",
+    github: "https://github.com/YashRajput74",
     linkedin: "linkedin.com/in/ayeshatakia",
     skype: "ayesha.takia",
 
-    skills: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
+    skills: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub", "JavaScript", "React", "HTML5", "CSS3", "Git & GitHub", "JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
 
     projects: [
         {
@@ -24,6 +24,21 @@ const mockUserData = {
             Title: "Weather App",
             Link: "https://github.com/ayesha/weather-app",
             Description: "A weather forecast app built with..."
+        },
+        {
+            Title: "Personal Portfolio Website",
+            Link: "https://ayesha-portfolio.netlify.app",
+            Description: "Developed a responsive personal portfolio..."
+        },
+        {
+            Title: "Weather App",
+            Link: "https://github.com/ayesha/weather-app",
+            Description: "A weather forecast app built with..."
+        },
+        {
+            Title: "Personal Portfolio Website",
+            Link: "https://ayesha-portfolio.netlify.app",
+            Description: "Developed a responsive personal portfolio..."
         }
     ],
 
@@ -58,6 +73,18 @@ const mockUserData = {
     ],
 
     experience: [
+        {
+            Role: "Frontend Developer Intern",
+            Organization: "TechNova Pvt Ltd",
+            Location: "Remote",
+            "Start Date": "2023",
+            "End Date": "2024",
+            Description: [
+                "Built reusable React components",
+                "Integrated REST APIs",
+                "Improved UI performance"
+            ]
+        },
         {
             Role: "Frontend Developer Intern",
             Organization: "TechNova Pvt Ltd",

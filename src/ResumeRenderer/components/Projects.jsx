@@ -3,7 +3,7 @@ export default function Projects({ data }) {
         <div className="projects">
             <h2>Projects</h2>
             {data.projects.map((project, index) => (
-                <div key={index}>
+                <div className="eachProject" key={index}>
                     <h3>{project.Title}</h3>
                     <p>{project.Description}</p>
                     <a href={project.Link} target="_blank" rel="noopener noreferrer">{project.Link}</a>

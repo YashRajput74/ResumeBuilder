@@ -2,24 +2,146 @@
     width: 210mm;
     height: 297mm;
     margin: auto;
-    padding: 20mm;
+    padding: 10mm;
     box-sizing: border-box;
     display: grid;
+    gap: 1rem;
     border: 1px solid #ccc;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .personalInfo{
     font-size: 1rem;
+    border-bottom: 1px solid black;
+    text-align: left;
+}
+.personalInfo>h1{
+    margin-bottom: 5px;
+}
+.personalInfo>p{
+    margin-bottom: 5px;
+}
+.contactList{
+    font-size: 1rem;
+    text-align: left;
+    margin-bottom: 30px;
+}
+.contactList h2{
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+.contactItem{
+    margin-bottom: 7px;
+}
+.contactItem p{
+    margin-left: 1rem;
+    display: inline;
+}
+.contactItem a{
+    color: #333333;
+    margin-left: 1rem;
+    display: inline;
 }
 .skills{
     font-size: 1rem;
+    text-align: left;
+}
+.skills h2{
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+.individualSkill{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.individualSkill div{
+    padding: 0.5rem;
+    border: 1px solid black;
+}
+.skills ul{
+    padding-left: 1rem;
+}
+.skills ul li{
+    padding-bottom: 5px;
 }
 .education{
     font-size: 1rem;
 }
 .workExperience{
     font-size: 1rem;
+    border-left: 1px solid black;
+    padding-left: 1rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.workExperience h2{
+    text-decoration: underline;
+}
+.workPlace{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.workExperience h4{
+    font-weight: 600;
+}
+.workExperience p{
+    font-style: italic;
+}
+.workExperience ul{
+    padding-left: 1rem;
+    list-style: inside;
 }
 .projects{
     font-size: 1rem;
+}
+.projects h2{
+    text-decoration: underline;
+}
+.projects{
+    font-size: 1rem;
+    border-left: 1px solid black;
+    padding-left: 1rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.eachProject{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.projects h4{
+    font-weight: 600;
+}
+.projects p{
+    font-style: italic;
+}
+.projects ul{
+    padding-left: 1rem;
+    list-style: inside;
+}
+.education{
+    font-size: 1rem;
+}
+.education h2{
+    text-decoration: underline;
+}
+.education{
+    font-size: 1rem;
+    border-left: 1px solid black;
+    padding-left: 1rem;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.school{
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.education h4{
+    font-weight: 600;
+}
+.education p{
+    font-style: italic;
+}
+.education ul{
+    padding-left: 1rem;
+    list-style: inside;
 }

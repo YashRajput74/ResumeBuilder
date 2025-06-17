@@ -1,6 +1,3 @@
-// import { fontFamily } from "html2canvas/dist/types/css/property-descriptors/font-family";
-import { sectionStyles } from "./sectionStyles";
-
 export const template1 = {
     id: 1,
     name: "Modern Grid",
@@ -12,7 +9,7 @@ export const template1 = {
             text: "#333333"
         },
         grid: {
-            templateColumns: "1fr 1fr",
+            templateColumns: "2fr 3fr",
             templateRows: "auto 1fr",
             areas: [
                 {
@@ -29,7 +26,7 @@ export const template1 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["skills", "education"]
+                    sections: ["contact","skills"]
                 },
                 {
                     name: "rightColumn",
@@ -37,18 +34,11 @@ export const template1 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["workExperience", "projects"]
+                    sections: ["workExperience", "projects","education"]
                 },
             ],
         }
     },
-    sectionStyles: {
-        personalInfo: sectionStyles.coloredHeader,
-        education: sectionStyles.blueCard,
-        workExperience: sectionStyles.modernBox,
-        skills: sectionStyles.minimal,
-        projects: sectionStyles.modernBox,
-    }
 };
 const template2 = {
     id: 2,
@@ -73,13 +63,6 @@ const template2 = {
             text: "#333333"
         }
     },
-    sectionStyles: {
-        personalInfo: sectionStyles.cleanHeader,
-        skills: sectionStyles.blueBoxSkills,
-        education: sectionStyles.cleanHeader,
-        workExperience: sectionStyles.cleanHeader,
-        organizations: sectionStyles.cleanHeader
-    }
 };
 
 const template3 = {
@@ -121,40 +104,6 @@ const template3 = {
         colorScheme: {
             background: "#ffffff",
             text: "#333333"
-        }
-    },
-    sectionStyles: {
-        personalInfo: {
-            fontSize: "1.5rem",
-            fontWeight: "bold",
-            textAlign: "center",
-            paddingBottom: "0.5rem",
-            borderBottom: "2px solid #333"
-        },
-        contact: {
-            fontSize: "0.9rem",
-            lineHeight: "1.4",
-            marginBottom: "1rem"
-        },
-        skills: {
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "0.5rem",
-            marginBottom: "1rem"
-        },
-        languages: {
-            fontSize: "0.9rem",
-            lineHeight: "1.4"
-        },
-        profile: {
-            fontStyle: "italic",
-            marginBottom: "1rem"
-        },
-        projects: {
-            marginBottom: "1rem"
-        },
-        education: {
-            marginBottom: "1rem"
         }
     }
 }

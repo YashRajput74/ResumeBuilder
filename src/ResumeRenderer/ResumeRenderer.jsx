@@ -4,6 +4,7 @@ import WorkExperience from "./components/WorkExperience";
 import Education from "./components/Education";
 import PersonalInfo from "./components/PersonalInfo";
 import "./ResumeRenderer.css";
+import Contact from "./components/Contact";
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -11,6 +12,7 @@ const sectionComponents = {
     workExperience: WorkExperience,
     skills: Skills,
     projects: Projects,
+    contact: Contact,
 };
 
 export default function ResumeRenderer({ template, data }) {
@@ -44,10 +46,8 @@ export default function ResumeRenderer({ template, data }) {
                 fontSize,
                 background: colorScheme.background,
                 color: colorScheme.text,
-                display: "grid",
                 gridTemplateColumns: grid.templateColumns,
                 gridTemplateRows: grid.templateRows,
-                gap: "1rem",
                 gridTemplateAreas,
             }}
         >
