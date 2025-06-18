@@ -1,7 +1,7 @@
-import Header from "./Components/Header";
-import Hero from "./Components/Hero";
-import TemplateSection from "./Components/TemplateSection";
-import { templates } from "./data/templates";
+import Header from "../Components/Header";
+import Hero from "../Components/Hero";
+import TemplateSection from "../Components/TemplateSection";
+import { templates } from "../data/templates";
 import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {

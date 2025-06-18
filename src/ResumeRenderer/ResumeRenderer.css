@@ -1,3 +1,10 @@
+:root{
+    --basic-font-size: 1rem;
+    --left-align: left;
+    --basic-pixel-margin: 5px;
+    --basic-black-border: 1px solid black;
+}
+
 #resume-view {
     width: 210mm;
     height: 297mm;
@@ -10,19 +17,19 @@
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 .personalInfo{
-    font-size: 1rem;
-    border-bottom: 1px solid black;
-    text-align: left;
+    font-size: var(--basic-font-size);
+    border-bottom: var(--basic-black-border);
+    text-align: var(--left-align);
 }
 .personalInfo>h1{
-    margin-bottom: 5px;
+    margin-bottom: var(--basic-pixel-margin);
 }
 .personalInfo>p{
-    margin-bottom: 5px;
+    margin-bottom: var(--basic-pixel-margin);
 }
 .contactList{
-    font-size: 1rem;
-    text-align: left;
+    font-size: var(--basic-font-size);
+    text-align: var(--left-align);
     margin-bottom: 30px;
 }
 .contactList h2{
@@ -30,20 +37,20 @@
     margin-bottom: 10px;
 }
 .contactItem{
-    margin-bottom: 7px;
+    margin-bottom: 10px;
 }
 .contactItem p{
-    margin-left: 1rem;
+    margin-left: var(--basic-font-size);
     display: inline;
 }
 .contactItem a{
     color: #333333;
-    margin-left: 1rem;
+    margin-left: var(--basic-font-size);
     display: inline;
 }
 .skills{
-    font-size: 1rem;
-    text-align: left;
+    font-size: var(--basic-font-size);
+    text-align: var(--left-align);
 }
 .skills h2{
     text-decoration: underline;
@@ -52,33 +59,33 @@
 .individualSkill{
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: var(--basic-font-size);
 }
 .individualSkill div{
     padding: 0.5rem;
-    border: 1px solid black;
+    border: var(--basic-black-border);
 }
 .skills ul{
-    padding-left: 1rem;
+    padding-left: var(--basic-font-size);
 }
 .skills ul li{
-    padding-bottom: 5px;
+    padding-bottom: 0.5rem;
 }
 .education{
-    font-size: 1rem;
+    font-size: var(--basic-font-size);
 }
 .workExperience{
-    font-size: 1rem;
-    border-left: 1px solid black;
-    padding-left: 1rem;
-    text-align: left;
+    font-size: var(--basic-font-size);
+    border-left: var(--basic-black-border);
+    padding-left: var(--basic-font-size);
+    text-align: var(--left-align);
     margin-bottom: 20px;
 }
 .workExperience h2{
     text-decoration: underline;
 }
 .workPlace{
-    margin-top: 5px;
+    margin-top: var(--basic-pixel-margin);
     margin-bottom: 10px;
 }
 .workExperience h4{
@@ -88,31 +95,31 @@
     font-style: italic;
 }
 .workExperience ul{
-    padding-left: 1rem;
+    padding-left: var(--basic-font-size);
     list-style: inside;
 }
 .projects{
-    font-size: 1rem;
+    font-size: var(--basic-font-size);
 }
 .projects h2{
     text-decoration: underline;
 }
 .projects{
-    font-size: 1rem;
-    border-left: 1px solid black;
-    padding-left: 1rem;
-    text-align: left;
+    font-size: var(--basic-font-size);
+    border-left: var(--basic-black-border);
+    padding-left: var(--basic-font-size);
+    text-align: var(--left-align);
     margin-bottom: 20px;
 }
 .icon {
   font-size: 0.65rem;
-  margin-left: 0.1rem;
+  margin-left: 0.5rem;
   margin-bottom: 0.3rem;
   vertical-align: middle;
 }
 
 .eachProject{
-    margin-top: 5px;
+    margin-top: var(--basic-pixel-margin);
     margin-bottom: 10px;
 }
 .projects h4{
@@ -122,24 +129,24 @@
     font-style: italic;
 }
 .projects ul{
-    padding-left: 1rem;
+    padding-left: var(--basic-font-size);
     list-style: inside;
 }
 .education{
-    font-size: 1rem;
+    font-size: var(--basic-font-size);
 }
 .education h2{
     text-decoration: underline;
 }
 .education{
-    font-size: 1rem;
-    border-left: 1px solid black;
-    padding-left: 1rem;
-    text-align: left;
+    font-size: var(--basic-font-size);
+    border-left: var(--basic-black-border);
+    padding-left: var(--basic-font-size);
+    text-align: var(--left-align);
     margin-bottom: 20px;
 }
 .school{
-    margin-top: 5px;
+    margin-top: var(--basic-pixel-margin);
     margin-bottom: 10px;
 }
 .education h4{
@@ -149,6 +156,6 @@
     font-style: italic;
 }
 .education ul{
-    padding-left: 1rem;
+    padding-left: var(--basic-font-size);
     list-style: inside;
 }

@@ -87,7 +87,7 @@ const template3 = {
                     rowEnd: 3,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["skills", "education"]
+                    sections: ["summary","workExperience", "education"]
                 },
                 {
                     name: "rightColumn",
@@ -95,7 +95,7 @@ const template3 = {
                     rowEnd: 3,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["workExperience", "projects"]
+                    sections: ["strengths","skills", "achievements"]
                 }
             ]
         },

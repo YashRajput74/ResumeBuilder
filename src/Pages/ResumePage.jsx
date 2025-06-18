@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
-import { templates } from "./data/templates";
-import mockUserData from "./data/mockUserData";
-import ResumeRenderer from "./ResumeRenderer/ResumeRenderer";
+import { templates } from "../data/templates";
+import mockUserData from "../data/mockUserData";
+import ResumeRenderer from "../ResumeRenderer/ResumeRenderer";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
