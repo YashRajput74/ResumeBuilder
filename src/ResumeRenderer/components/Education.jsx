@@ -1,4 +1,7 @@
-export default function Education({ data }) {
+import { useResume } from "../../context/ResumeContext";
+
+export default function Education() {
+    const { data, style } = useResume();
     return (
         <div className="education">
             <h2>Education</h2>

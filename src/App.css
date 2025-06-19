@@ -1,4 +1,4 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -127,7 +127,7 @@ header a img {
     margin: 2px 0;
     border-radius: 2px;
 }
- 
+
 .templateCard p {
     font-weight: 600;
     color: #444;

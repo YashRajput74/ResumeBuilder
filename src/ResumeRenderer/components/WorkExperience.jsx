@@ -1,4 +1,7 @@
-export default function WorkExperience({ data }) {
+import { useResume } from "../../context/ResumeContext";
+
+export default function WorkExperience() {
+    const {data, style} = useResume();
     return (
         <div className="workExperience">
             <h2>Work Experience</h2>

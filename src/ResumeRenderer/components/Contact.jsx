@@ -1,9 +1,13 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faLocationDot, faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-export default function Contact({ data }) {
+import { useResume } from '../../context/ResumeContext';
+
+export default function Contact() {
+    const { data, style } = useResume();
+
     return (
-        <div className="contactList">
+        <div className="contactList" style={{ color: style.contentColor }}>
             <h2>Contact</h2>
             <div className="contactItem">
                 <FontAwesomeIcon icon={faPhone} />

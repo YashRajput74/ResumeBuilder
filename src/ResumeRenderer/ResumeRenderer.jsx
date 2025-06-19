@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 import Strengths from "./components/Strengths";
 import Achievements from "./components/Achievements";
 import Summary from "./components/Summary";
+import { ResumeContext } from "../context/ResumeContext";
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -24,9 +25,14 @@ const sectionComponents = {
 export default function ResumeRenderer({ template, data }) {
     const { grid, fontFamily, fontSize, colorScheme } = template.layout;
 
+    const contextValue = {
+        data,
+        style: template.layout,
+    };
+
     const renderSection = (sectionName) => {
         const SectionComponent = sectionComponents[sectionName];
-        return SectionComponent ? <SectionComponent data={data} /> : null;
+        return SectionComponent ? <SectionComponent /> : null;
     };
 
     const numRows = grid.templateRows.split(" ").length;
@@ -45,31 +51,32 @@ export default function ResumeRenderer({ template, data }) {
     const gridTemplateAreas = gridMatrix.map(row => `"${row.join(" ")}"`).join(" ");
 
     return (
-        <div
-            id="resume-view"
-            style={{
-                fontFamily,
-                fontSize,
-                background: colorScheme.background,
-                color: colorScheme.text,
-                gridTemplateColumns: grid.templateColumns,
-                gridTemplateRows: grid.templateRows,
-                gridTemplateAreas,
-            }}
-        >
-            {grid.areas.map((area, index) => (
-                <div key={index} style={{ gridArea: area.name }}>
-                    {area.sections.map((section) => {
-                        const sectionStyle = template.sectionStyles?.[section] || {};
-                        return (
-                            <div key={section} style={sectionStyle}>
-                                {renderSection(section)}
-                            </div>
-                        );
-                    })}
-
-                </div>
-            ))}
-        </div>
+        <ResumeContext.Provider value={contextValue}>
+            <div
+                id="resume-view"
+                style={{
+                    fontFamily,
+                    fontSize,
+                    background: colorScheme.background,
+                    color: colorScheme.text,
+                    gridTemplateColumns: grid.templateColumns,
+                    gridTemplateRows: grid.templateRows,
+                    gridTemplateAreas,
+                }}
+            >
+                {grid.areas.map((area, index) => (
+                    <div key={index} style={{ gridArea: area.name }}>
+                        {area.sections.map((section) => {
+                            const sectionStyle = template.sectionStyles?.[section] || {};
+                            return (
+                                <div key={section} style={sectionStyle}>
+                                    {renderSection(section)}
+                                </div>
+                            );
+                        })}
+                    </div>
+                ))}
+            </div>
+        </ResumeContext.Provider>
     );
 }

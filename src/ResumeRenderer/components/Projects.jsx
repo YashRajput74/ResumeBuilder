@@ -1,7 +1,9 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons';
+import { useResume } from '../../context/ResumeContext';
 
-export default function Projects({ data }) {
+export default function Projects() {
+    const { data, style } = useResume();
     return (
         <div className="projects">
             <h2>Projects</h2>
@@ -9,7 +11,7 @@ export default function Projects({ data }) {
                 <div className="eachProject" key={index}>
                     <h3>{project.Title}
                         <a href={project.Link} target="_blank" rel="noopener noreferrer">
-                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="icon" size="sm"/>
+                            <FontAwesomeIcon icon={faArrowUpRightFromSquare} className="icon" size="sm" />
                         </a>
                     </h3>
 

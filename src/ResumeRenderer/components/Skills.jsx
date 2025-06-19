@@ -9,10 +9,13 @@
     );
 } */
 
-export default function Skills({ data }) {
+import { useResume } from "../../context/ResumeContext";
+
+export default function Skills() {
+    const {data, style}= useResume();
     return (
         <div className="skills">
-            <h2>Skills</h2>
+            <h2 style={{textAlign: style.heading.alignment, textDecoration: style.heading.decoration}}>Skills</h2>
             <div className="individualSkill">
                 {data.skills.map((skill, index) => <div key={index}>{skill}</div>)}
             </div>
