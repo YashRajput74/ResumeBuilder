@@ -9,6 +9,8 @@ import Strengths from "./components/Strengths";
 import Achievements from "./components/Achievements";
 import Summary from "./components/Summary";
 import { ResumeContext } from "../context/ResumeContext";
+import templateStyles from "../data/templateStyles";
+import Organizations from "./components/Organizations";
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -19,16 +21,21 @@ const sectionComponents = {
     contact: Contact,
     summary: Summary,
     strengths: Strengths,
-    achievements: Achievements
+    achievements: Achievements,
+    organizations: Organizations
 };
 
 export default function ResumeRenderer({ template, data }) {
-    const { grid, fontFamily, fontSize, colorScheme } = template.layout;
-
+    const templateId = String(template.id);
+    const style = templateStyles[templateId] || {};
+    const cssVariables = style.vars || {};
+    
     const contextValue = {
         data,
-        style: template.layout,
+        style
     };
+
+    const { grid, fontFamily, fontSize, colorScheme } = template.layout;
 
     const renderSection = (sectionName) => {
         const SectionComponent = sectionComponents[sectionName];
@@ -62,14 +69,15 @@ export default function ResumeRenderer({ template, data }) {
                     gridTemplateColumns: grid.templateColumns,
                     gridTemplateRows: grid.templateRows,
                     gridTemplateAreas,
+                    ...cssVariables
                 }}
             >
                 {grid.areas.map((area, index) => (
                     <div key={index} style={{ gridArea: area.name }}>
                         {area.sections.map((section) => {
-                            const sectionStyle = template.sectionStyles?.[section] || {};
+                            /* const sectionStyle = style?.[section]?.box || {}; */
                             return (
-                                <div key={section} style={sectionStyle}>
+                                <div key={section} /* style={sectionStyle} */>
                                     {renderSection(section)}
                                 </div>
                             );

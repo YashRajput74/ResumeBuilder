@@ -1,11 +1,11 @@
 const mockUserData = {
-    name: "Ayesha Takia",
     firstName: "Ayesha",
     lastName: "Takia",
     email: "ayesha.takia@example.com",
     phoneNo: "+91 9876543210",
+    position: "Web Developer",
     address: "123, Park Lane, Delhi, India",
-    summary: "Enthusiastic and detail-oriented web developer...",
+    summary: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur at harum, rem rerum vitae id praesentium placeat deserunt sit voluptatum iusto facere qui consectetur,",
     profilePhoto: "",
     portfolio: "https://ayesha-portfolio.netlify.app",
     github: "https://github.com/YashRajput74",
@@ -118,6 +118,20 @@ const mockUserData = {
             Title: "Responsive Web Design",
             Organization: "Coursera",
             Date: "2022"
+        }
+    ],
+    organizations: [
+        {
+            Title: "American Management Association",
+            Date: "(2015-Present)"
+        },
+        {
+            Title: "Association of Private Enterprise Education",
+            Date: "(2014-Present)"
+        },
+        {
+            Title: "eBusiness Association",
+            Date: "(2013-Present)"
         }
     ]
 };

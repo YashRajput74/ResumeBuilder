@@ -3,15 +3,15 @@ import { useResume } from "../../context/ResumeContext";
 export default function WorkExperience() {
     const {data, style} = useResume();
     return (
-        <div className="workExperience">
-            <h2>Work Experience</h2>
+        <div className="workExperience"  style={style?.workExpe?.box}>
+            <h2 style={style?.workExpe?.heading}>Work Experience</h2>
             {data.experience.map((exp, index) => (
-                <div className="workPlace" key={index}>
-                    <h3>{exp.Role}</h3>
-                    <h4> {exp.Organization}</h4>
-                    <p>{exp.Location} | {exp["Start Date"]} - {exp["End Date"]}</p>
-                    <ul>
-                        {exp.Description.map((item, i) => <li key={i}>{item}</li>)}
+                <div className="workPlace" key={index}  style={style?.workExpe?.eachWorkPlace}>
+                    <h3 style={style?.workExpe?.role}>{exp.Role}</h3>
+                    <h4 style={style?.workExpe?.organization}> {exp.Organization}</h4>
+                    <p style={style?.workExpe?.dates}>{exp.Location} | {exp["Start Date"]} - {exp["End Date"]}</p>
+                    <ul style={style?.workExpe?.wholeList}>
+                        {exp.Description.map((item, i) => <li key={i} style={style?.workExpe?.bullets}>{item}</li>)}
                     </ul>
                 </div>
             ))}

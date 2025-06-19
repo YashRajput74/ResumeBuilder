@@ -1,4 +1,4 @@
-:root{
+:root {
     --basic-font-size: 1rem;
     --left-align: left;
     --basic-pixel-margin: 5px;
@@ -14,148 +14,190 @@
     display: grid;
     gap: 1rem;
     border: 1px solid #ccc;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-.personalInfo{
+
+.personalInfo {
     font-size: var(--basic-font-size);
     border-bottom: var(--basic-black-border);
     text-align: var(--left-align);
 }
-.personalInfo>h1{
+
+.personalInfo>h1 {
     margin-bottom: var(--basic-pixel-margin);
 }
-.personalInfo>p{
+
+.personalInfo>p {
     margin-bottom: var(--basic-pixel-margin);
 }
-.contactList{
+
+.contactList {
     font-size: var(--basic-font-size);
     text-align: var(--left-align);
     margin-bottom: 30px;
 }
-.contactList h2{
+
+.contactList h2 {
     text-decoration: underline;
     margin-bottom: 10px;
 }
-.contactItem{
+
+.contactItem {
     margin-bottom: 10px;
 }
-.contactItem p{
+
+.contactItem p {
     margin-left: var(--basic-font-size);
     display: inline;
 }
-.contactItem a{
+
+.contactItem a {
     color: #333333;
     margin-left: var(--basic-font-size);
     display: inline;
 }
-.skills{
+
+.skills {
     font-size: var(--basic-font-size);
     text-align: var(--left-align);
 }
-.skills h2{
+
+.skills h2 {
     text-decoration: underline;
     margin-bottom: 10px;
 }
-.individualSkill{
+
+.individualSkill {
     display: flex;
     flex-wrap: wrap;
     gap: var(--basic-font-size);
 }
-.individualSkill div{
+
+.individualSkill div {
     padding: 0.5rem;
     border: var(--basic-black-border);
 }
-.skills ul{
+
+.skills ul {
     padding-left: var(--basic-font-size);
-}
-.skills ul li{
-    padding-bottom: 0.5rem;
-}
-.education{
-    font-size: var(--basic-font-size);
-}
-.workExperience{
-    font-size: var(--basic-font-size);
-    border-left: var(--basic-black-border);
-    padding-left: var(--basic-font-size);
-    text-align: var(--left-align);
-    margin-bottom: 20px;
-}
-.workExperience h2{
-    text-decoration: underline;
-}
-.workPlace{
-    margin-top: var(--basic-pixel-margin);
-    margin-bottom: 10px;
-}
-.workExperience h4{
-    font-weight: 600;
-}
-.workExperience p{
-    font-style: italic;
-}
-.workExperience ul{
-    padding-left: var(--basic-font-size);
-    list-style: inside;
-}
-.projects{
-    font-size: var(--basic-font-size);
-}
-.projects h2{
-    text-decoration: underline;
-}
-.projects{
-    font-size: var(--basic-font-size);
-    border-left: var(--basic-black-border);
-    padding-left: var(--basic-font-size);
-    text-align: var(--left-align);
-    margin-bottom: 20px;
-}
-.icon {
-  font-size: 0.65rem;
-  margin-left: 0.5rem;
-  margin-bottom: 0.3rem;
-  vertical-align: middle;
 }
 
-.eachProject{
-    margin-top: var(--basic-pixel-margin);
-    margin-bottom: 10px;
+.skills ul li {
+    padding-bottom: 0.5rem;
 }
-.projects h4{
-    font-weight: 600;
-}
-.projects p{
-    font-style: italic;
-}
-.projects ul{
-    padding-left: var(--basic-font-size);
-    list-style: inside;
-}
-.education{
+
+.education {
     font-size: var(--basic-font-size);
 }
-.education h2{
-    text-decoration: underline;
-}
-.education{
+
+.workExperience {
     font-size: var(--basic-font-size);
     border-left: var(--basic-black-border);
     padding-left: var(--basic-font-size);
     text-align: var(--left-align);
     margin-bottom: 20px;
 }
-.school{
+
+.workExperience h2 {
+    text-decoration: underline;
+}
+
+.workPlace {
     margin-top: var(--basic-pixel-margin);
     margin-bottom: 10px;
 }
-.education h4{
+
+.workExperience h4 {
     font-weight: 600;
 }
-.education p{
+
+.workExperience p {
     font-style: italic;
 }
-.education ul{
+
+.workExperience ul {
     padding-left: var(--basic-font-size);
     list-style: inside;
+}
+
+.projects {
+    font-size: var(--basic-font-size);
+}
+
+.projects h2 {
+    text-decoration: underline;
+}
+
+.projects {
+    font-size: var(--basic-font-size);
+    border-left: var(--basic-black-border);
+    padding-left: var(--basic-font-size);
+    text-align: var(--left-align);
+    margin-bottom: 20px;
+}
+
+.icon {
+    font-size: 0.65rem;
+    margin-left: 0.5rem;
+    margin-bottom: 0.3rem;
+    vertical-align: middle;
+}
+
+.eachProject {
+    margin-top: var(--basic-pixel-margin);
+    margin-bottom: 10px;
+}
+
+.projects h4 {
+    font-weight: 600;
+}
+
+.projects p {
+    font-style: italic;
+}
+
+.projects ul {
+    padding-left: var(--basic-font-size);
+    list-style: inside;
+}
+
+.education {
+    font-size: var(--basic-font-size);
+}
+
+.education h2 {
+    text-decoration: underline;
+}
+
+.education {
+    font-size: var(--basic-font-size);
+    border-left: var(--basic-black-border);
+    padding-left: var(--basic-font-size);
+    text-align: var(--left-align);
+    margin-bottom: 20px;
+}
+
+.school {
+    margin-top: var(--basic-pixel-margin);
+    margin-bottom: 10px;
+}
+
+.education h4 {
+    font-weight: 600;
+}
+
+.education p {
+    font-style: italic;
+}
+
+.education ul {
+    padding-left: var(--basic-font-size);
+    list-style: inside;
+}
+
+.organizations{
+    color: black;
+}
+.organizations h2{
+    color: black;
 }

@@ -14,10 +14,10 @@ import { useResume } from "../../context/ResumeContext";
 export default function Skills() {
     const {data, style}= useResume();
     return (
-        <div className="skills">
-            <h2 style={{textAlign: style.heading.alignment, textDecoration: style.heading.decoration}}>Skills</h2>
-            <div className="individualSkill">
-                {data.skills.map((skill, index) => <div key={index}>{skill}</div>)}
+        <div className="skills" style={style?.skills?.box}>
+            <h2 style={style?.skills?.heading}>Skills</h2>
+            <div className="individualSkill" style={style?.skills?.everySkillBox}>
+                {data.skills.map((skill, index) => <div key={index} style={style?.skills?.eachSkillBox}>{skill}</div>)}
             </div>
         </div>
     );

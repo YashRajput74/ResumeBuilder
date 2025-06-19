@@ -1,0 +1,146 @@
+//this file is only for reference of future developers for styles provided in each section in a template
+
+
+style: {
+            personalInfo:{
+                box:{
+
+                },
+                name: {
+                    fontColor: "#333",
+
+                },
+                position:{
+
+                },
+                summary:{
+
+                }
+            },
+            contact: {
+                box:{
+
+                },
+                heading:{
+
+                },
+                innerBox:{
+                    
+                },
+                icon:{
+
+                },
+                content:{
+
+                },
+                anchor:{
+
+                }
+            },
+            skills:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                everySkillBox:{
+
+                },
+                eachSkillBox:{
+
+                }
+            }
+            workExpe:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                eachWorkPlace:{
+
+                },
+                role:{
+
+                },
+                organization:{
+
+                },
+                dates:{
+
+                },
+                wholeList:{
+
+                },
+                bullets:{
+
+                }
+            },
+            projects:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                eachProject:{
+
+                },
+                title:{
+
+                },
+                icon:{
+
+                },
+                list:{
+
+                },
+                listItem:{
+
+                },
+                description:{
+
+                }
+            },
+            education:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                eachSchool:{
+
+                },
+                name:{
+
+                },
+                city:{
+
+                },
+                description:{
+                    
+                }
+            },
+            organiz:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                innerBox:{
+
+                },
+                eachOrganiz:{
+
+                },
+                title:{
+
+                },
+                date:{
+
+                }
+            }
+        },
