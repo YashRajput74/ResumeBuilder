@@ -1,8 +1,12 @@
-export default function Summary({data}){
+import { useResume } from "../../context/ResumeContext"
+
+export default function Summary() {
+    const { data, style } = useResume();
+
     return (
-        <div>
-            <h2>Summary</h2>
-            <p>{data.summary}</p>
+        <div className="summary" style={style?.summary?.box}>
+            <h2 style={style?.summary?.heading}>Summary</h2>
+            <p style={style?.summary?.content}>{data.summary}</p>
         </div>
     )
 }

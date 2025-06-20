@@ -6,38 +6,37 @@ import { useResume } from '../../context/ResumeContext';
 export default function Contact() {
     const { data, style } = useResume();
 
+    const contactFields = {
+        phoneNo: { icon: faPhone, label: data.phoneNo, isLink: false },
+        email: { icon: faEnvelope, label: data.email, isLink: false },
+        address: { icon: faLocationDot, label: data.address, isLink: false },
+        portfolio: { icon: faGlobe, label: data.portfolio, isLink: true, display: "Portfolio" },
+        linkedin: { icon: faLinkedin, label: data.linkedin, isLink: true, display: "Linkedin" },
+        github: { icon: faGithub, label: data.github, isLink: true, display: "Github" }
+    };
+
+    const visible = style?.contact?.visibleFields || [];
+
     return (
         <div className="contactList" style={style?.contact?.box}>
             <h2 style={style?.contact?.heading}>Contact</h2>
-            <div className="contactItem" style={style?.contact?.innerBox}>
-                <FontAwesomeIcon icon={faPhone} style={style?.contact?.icon}/>
-                <p style={style?.contact?.content}>{data.phoneNo}</p>
-            </div>
+            {visible.map((key, index) => {
+                const field = contactFields[key];
+                if (!field || !field.label) return null;
 
-            <div className="contactItem" style={style?.contact?.innerBox}>
-                <FontAwesomeIcon icon={faEnvelope}  style={style?.contact?.icon}/>
-                <p style={style?.contact?.content}>{data.email}</p>
-            </div>
-
-            <div className="contactItem" style={style?.contact?.innerBox}>
-                <FontAwesomeIcon icon={faLocationDot}  style={style?.contact?.icon}/>
-                <p style={style?.contact?.content}>{data.address}</p>
-            </div>
-
-            <div className="contactItem" style={style?.contact?.innerBox}>
-                <FontAwesomeIcon icon={faGlobe}  style={style?.contact?.icon}/>
-                <a href={data.portfolio} style={style?.contact?.anchor}>Portfolio</a>
-            </div>
-
-            <div className="contactItem" style={style?.contact?.innerBox}>
-                <FontAwesomeIcon icon={faLinkedin}  style={style?.contact?.icon}/>
-                <a href={data.linkedin} style={style?.contact?.anchor}>LinkedIn</a>
-            </div>
-
-            <div className="contactItem" style={style?.contact?.innerBox}>
-                <FontAwesomeIcon icon={faGithub}  style={style?.contact?.icon}/>
-                <a href={data.github} target='blank_'  style={style?.contact?.anchor}>Github</a>
-            </div>
+                return (
+                    <div className="contactItem" style={style?.contact?.innerBox} key={index}>
+                        <FontAwesomeIcon icon={field.icon} style={style?.contact?.icon} />
+                        {field.isLink ? (
+                            <a href={field.label} style={style?.contact?.anchor}>
+                                {field.display}
+                            </a>
+                        ) : (
+                            <p style={style?.contact?.content}>{field.label}</p>
+                        )}
+                    </div>
+                );
+            })}
         </div>
     )
 }

@@ -68,6 +68,8 @@ export default function ResumeRenderer({ template, data }) {
                     color: colorScheme.text,
                     gridTemplateColumns: grid.templateColumns,
                     gridTemplateRows: grid.templateRows,
+                    rowGap: grid.rowGap,
+                    columnGap: grid.columnGap,
                     gridTemplateAreas,
                     ...cssVariables
                 }}

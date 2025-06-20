@@ -7,16 +7,26 @@ const sharedStyles = {
             borderTop: "2px solid var(--heading-color)",
             borderBottom: "2px solid var(--heading-color)"
         },
-        icon: {
-
+    },
+    "3": {
+        heading: {
+            color: "var(--content-color)",
+            borderBottom: "2px solid var(--content-color)",
+            marginBottom: "10px"
         },
         content: {
-
+            color: "var(--content-color)",
+            marginBottom: "2rem"
         }
     }
 };
 
 const templateStyles = {
+    "1": {
+        contact: {
+            visibleFields: ["phoneNo", "address", "email", "portfolio", "linkedin", "github"],
+        }
+    },
     "2": {
         vars: {
             "--heading-color": "#003366",
@@ -42,6 +52,7 @@ const templateStyles = {
             }
         },
         contact: {
+            visibleFields: ["email", "phoneNo", "address", "linkedin", "github"],
             heading: {
                 display: "none"
             },
@@ -104,11 +115,11 @@ const templateStyles = {
         organiz: {
             box: {
             },
-            heading:{
+            heading: {
                 ...sharedStyles["2"].heading,
                 marginBottom: "10px"
             },
-            innerBox:{
+            innerBox: {
                 display: "flex",
                 flexWrap: "wrap"
             },
@@ -123,6 +134,149 @@ const templateStyles = {
                 textAlign: "left"
             }
         }
+    },
+    "3": {
+        vars: {
+            "--heading-color": "#333",
+            "--secondary-heading-color": "#2091FF",
+            "--content-color": "gray",
+        },
+        personalInfo: {
+            box: {
+                border: "1px solid white",
+            },
+            name: {
+                color: "var(--heading-color)",
+            },
+            position: {
+                color: "var(--secondary-heading-color)",
+                fontWeight: "400",
+            },
+            summary: {
+                display: "none",
+            }
+        },
+        contact: {
+            visibleFields: ["phoneNo", "portfolio", "linkedin", "address"],
+            box: {
+                display: "flex",
+                flexWrap: "wrap"
+            },
+            heading: {
+                display: "none"
+            },
+            innerBox: {
+                marginRight: "25px"
+            },
+            icon: {
+                color: "var(--content-color)"
+            },
+            content: {
+                marginLeft: "5px",
+                color: "var(--content-color)"
+            },
+            anchor: {
+                marginLeft: "5px",
+                color: "var(--content-color)"
+            }
+        },
+        summary: {
+            box: {
+                marginBottom: "25px"
+            },
+            heading: {
+                ...sharedStyles["3"].heading
+            },
+            content: {
+                ...sharedStyles["3"].content
+            }
+        },
+        workExpe: {
+            box: {
+                border: "none",
+                paddingLeft: "0px"
+            },
+            heading: {
+                ...sharedStyles["3"].heading,
+                textDecoration: "none"
+            },
+            role: {
+                fontSize: "18px"
+            },
+            organization: {
+                color: "var(--secondary-heading-color)",
+                padding: "5px 0px",
+                fontSize: "16px"
+            },
+            dates: {
+                color: "var(--content-color)",
+            },
+            wholeList: {
+                color: "var(--content-color)"
+            }
+        },
+        education: {
+            box: {
+                border: "none",
+                paddingLeft: "0px"
+            },
+            heading: {
+                ...sharedStyles["3"].heading,
+                textDecoration: "none",
+            },
+            name: {
+                fontSize: "18px"
+            },
+            city: {
+                fontSize: "16px",
+                color: "var(--secondary-heading-color)",
+                paddingBottom: "5px"
+            },
+            description: {
+                fontSize: "14px"
+            }
+        },
+        skills: {
+            heading: {
+                ...sharedStyles["3"].heading,
+                textDecoration: "none",
+                marginBottom: "15px"
+            },
+            eachSkillBox: {
+                borderTop: "none",
+                borderLeft: "none",
+                borderRight: "none",
+                borderBottom: "1px solid black",
+                padding: "4px"
+            }
+        },
+        achieve: {
+            box: {
+                marginTop: "25px",
+                textAlign: "left",
+            },
+            heading: {
+                ...sharedStyles["3"].heading
+            },
+            content: {
+                padding: "2px",
+                color: "var(--content-color)"
+            }
+        },
+        strength: {
+            box: {
+                marginTop: "25px",
+                textAlign: "left",
+                marginBottom: "25px"
+            },
+            heading: {
+                ...sharedStyles["3"].heading
+            },
+            content: {
+                padding: "2px",
+                color: "var(--content-color)"
+            }
+        },
     }
 }
 

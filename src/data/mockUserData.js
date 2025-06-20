@@ -133,7 +133,21 @@ const mockUserData = {
             Title: "eBusiness Association",
             Date: "(2013-Present)"
         }
-    ]
+    ],
+    strengths: [
+        {
+            Title: "Strategic Planning",
+            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia et ut facilis dolorem debitis provident eos"
+        },
+        {
+            Title: "Collaboration",
+            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
+        },
+        {
+            Title: "Media Relations",
+            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
+        }
+    ],
 };
 
 export default mockUserData;
@@ -179,20 +193,7 @@ export default mockUserData;
         }
     ],
 
-    strengths: [
-        {
-            Title: "Strategic Planning",
-            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia et ut facilis dolorem debitis provident eos"
-        },
-        {
-            Title: "Collaboration",
-            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
-        },
-        {
-            Title: "Media Relations",
-            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
-        }
-    ],
+    
 
     education: [
         {

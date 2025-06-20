@@ -18,6 +18,8 @@ style: {
                 }
             },
             contact: {
+                visibleFields: [ "phoneNo", "portfolio", "linkedin", "address", "email", "github"],
+
                 box:{
 
                 },
@@ -142,5 +144,50 @@ style: {
                 date:{
 
                 }
-            }
+            },
+            summary:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                content:{
+                    
+                }
+            },
+            achieve:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                innerBox:{
+
+                },
+                title:{
+
+                },
+                content:{
+
+                }
+            },
+            strength:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                innerBox:{
+
+                },
+                title:{
+
+                },
+                content:{
+
+                }
+            },
         },

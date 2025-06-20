@@ -109,32 +109,42 @@ const template3 = {
     name: "Basic Two Columns",
     layout: {
         grid: {
-            templateRows: "1fr 8fr",
-            templateColumns: "1fr 2fr",
+            templateRows: "1fr 0.1fr 12fr",
+            templateColumns: "3fr 2fr",
+            rowGap: "0rem",
+            columnGap: "2rem",
             areas: [
                 {
                     name: "header",
                     rowStart: 1,
                     rowEnd: 2,
                     colStart: 1,
-                    colEnd: 2,
+                    colEnd: 3,
                     sections: ["personalInfo"]
                 },
                 {
-                    name: "leftColumn",
+                    name: "contacts",
                     rowStart: 2,
                     rowEnd: 3,
                     colStart: 1,
+                    colEnd: 3,
+                    sections: ["contact"]
+                },
+                {
+                    name: "leftColumn",
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 1,
                     colEnd: 2,
-                    sections: ["workExperience", "education"]
+                    sections: ["summary", "workExperience", "education"]
                 },
                 {
                     name: "rightColumn",
-                    rowStart: 2,
-                    rowEnd: 3,
+                    rowStart: 3,
+                    rowEnd: 4,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["skills"]
+                    sections: ["strengths","skills", "achievements"]
                 }
             ]
         },
