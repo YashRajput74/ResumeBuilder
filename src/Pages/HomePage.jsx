@@ -1,4 +1,4 @@
-import Header from "../Components/Header";
+import Header from "../Components/Header/Header";
 import Hero from "../Components/Hero";
 import TemplateSection from "../Components/TemplateSection";
 import { templates } from "../data/templates";

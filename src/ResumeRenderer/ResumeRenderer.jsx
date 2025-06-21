@@ -11,6 +11,7 @@ import Summary from "./components/Summary";
 import { ResumeContext } from "../context/ResumeContext";
 import templateStyles from "../data/templateStyles";
 import Organizations from "./components/Organizations";
+import Avatar from "./components/Avatar";
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -22,7 +23,8 @@ const sectionComponents = {
     summary: Summary,
     strengths: Strengths,
     achievements: Achievements,
-    organizations: Organizations
+    organizations: Organizations,
+    avatar: Avatar
 };
 
 export default function ResumeRenderer({ template, data }) {

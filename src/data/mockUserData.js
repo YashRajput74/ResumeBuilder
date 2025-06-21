@@ -6,7 +6,7 @@ const mockUserData = {
     position: "Web Developer",
     address: "123, Park Lane, Delhi, India",
     summary: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur at harum, rem rerum vitae id praesentium placeat deserunt sit voluptatum iusto facere qui consectetur,",
-    profilePhoto: "",
+    profilePhoto: "https://media-public.canva.com/rmBDc/MAEiuyrmBDc/1/s.jpg",
     portfolio: "https://ayesha-portfolio.netlify.app",
     github: "https://github.com/YashRajput74",
     linkedin: "linkedin.com/in/ayeshatakia",
@@ -82,6 +82,30 @@ const mockUserData = {
     ],
 
     experience: [
+        {
+            Role: "Frontend Developer Intern",
+            Organization: "TechNova Pvt Ltd",
+            Location: "Remote",
+            "Start Date": "2023",
+            "End Date": "2024",
+            Description: [
+                "Built reusable React components",
+                "Integrated REST APIs",
+                "Improved UI performance"
+            ]
+        },
+        {
+            Role: "Frontend Developer Intern",
+            Organization: "TechNova Pvt Ltd",
+            Location: "Remote",
+            "Start Date": "2023",
+            "End Date": "2024",
+            Description: [
+                "Built reusable React components",
+                "Integrated REST APIs",
+                "Improved UI performance"
+            ]
+        },
         {
             Role: "Frontend Developer Intern",
             Organization: "TechNova Pvt Ltd",

@@ -47,52 +47,53 @@ const template2 = {
             templateRows: "1fr 1fr 1fr 1fr 1fr",
             templateColumns: "1.5fr 0.5fr 1fr",
             areas: [
-                { 
-                    name: "header", 
-                    rowStart: 1, 
-                    rowEnd: 2, 
-                    colStart: 1, 
-                    colEnd: 2, 
-                    sections: ["personalInfo"] 
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["personalInfo"]
                 },
-                { 
-                    name: "contact", 
-                    rowStart: 1, 
-                    rowEnd: 2, 
-                    colStart: 3, 
+                {
+                    name: "contact",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 3,
                     colEnd: 4,
-                    sections: ["contact"] },
-                { 
-                    name: "skills", 
-                    rowStart: 2, 
-                    rowEnd: 3, 
-                    colStart: 1, 
-                    colEnd: 4, 
-                    sections: ["skills"] 
+                    sections: ["contact"]
                 },
-                { 
-                    name: "workExperience", 
-                    rowStart: 3, 
-                    rowEnd: 4, 
-                    colStart: 1, 
-                    colEnd: 4, 
+                {
+                    name: "skills",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 4,
+                    sections: ["skills"]
+                },
+                {
+                    name: "workExperience",
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 1,
+                    colEnd: 4,
                     sections: ["workExperience"]
                 },
-                { 
-                    name: "education", 
-                    rowStart: 4, 
-                    rowEnd: 5, 
-                    colStart: 1, 
-                    colEnd: 4, 
-                    sections: ["education"] 
+                {
+                    name: "education",
+                    rowStart: 4,
+                    rowEnd: 5,
+                    colStart: 1,
+                    colEnd: 4,
+                    sections: ["education"]
                 },
-                { 
-                    name: "organizations", 
-                    rowStart: 5, 
-                    rowEnd: 6, 
-                    colStart: 1, 
-                    colEnd: 4, 
-                    sections: ["organizations"] 
+                {
+                    name: "organizations",
+                    rowStart: 5,
+                    rowEnd: 6,
+                    colStart: 1,
+                    colEnd: 4,
+                    sections: ["organizations"]
                 }
             ]
         },
@@ -144,7 +145,7 @@ const template3 = {
                     rowEnd: 4,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["strengths","skills", "achievements"]
+                    sections: ["strengths", "skills", "achievements"]
                 }
             ]
         },
@@ -157,4 +158,41 @@ const template3 = {
     }
 }
 
-export const templates = [template1, template2, template3,];
+const template4 = {
+    id: 4,
+    name: "Own template",
+    layout: {
+        grid: {
+            templateRows: "auto",
+            templateColumns: "2fr 3fr",
+            rowGap: "0rem",
+            columnGap: "2rem",
+            areas: [
+                {
+                    name: 'leftColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["avatar","contact","summary","skills"]
+                },
+                {
+                    name: 'rightColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 2,
+                    colEnd: 3,
+                    sections: ["education","workExperience"]
+                },
+            ]
+        },
+        fontFamily: "Montserrat",
+        fontSize: "18px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+}
+
+export const templates = [template1, template2, template3,template4];

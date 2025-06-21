@@ -18,6 +18,17 @@ const sharedStyles = {
             color: "var(--content-color)",
             marginBottom: "2rem"
         }
+    },
+    "4": {
+        heading: {
+            fontSize: "24px",
+            color: "var(--content-color)",
+            textDecoration: "none",
+            borderBottom: "2px solid var(--secondary-heading-color)"
+        },
+        box: {
+            margin: "25px 0px"
+        },
     }
 };
 
@@ -277,6 +288,88 @@ const templateStyles = {
                 color: "var(--content-color)"
             }
         },
+    },
+    "4": {
+        vars: {
+            "--heading-color": "#333",
+            "--secondary-heading-color": "#608abf",
+            "--content-color": "#636466",
+        },
+        avatar: {
+            card: {
+                background: "linear-gradient(135deg, var(--secondary-heading-color) 50%, white 50%)"
+            },
+            heading: {
+                color: "#333"
+            }
+        },
+        contact: {
+            visibleFields: ["phoneNo", "email", "address"],
+            box: {
+                ...sharedStyles["4"].box
+            },
+            heading: {
+                ...sharedStyles["4"].heading
+            },
+        },
+        summary: {
+            box: {
+                ...sharedStyles["4"].box
+            },
+            heading: {
+                ...sharedStyles["4"].heading,
+                marginBottom: "10px"
+            }
+        },
+        skills: {
+            box: {
+                ...sharedStyles["4"].box
+            },
+            heading: {
+                ...sharedStyles["4"].heading
+            }
+        },
+        education: {
+            box: {
+                ...sharedStyles["4"].box,
+                border: "none"
+            },
+            heading: {
+                ...sharedStyles["4"].heading
+            },
+            sideline: "true",
+            name: {
+                color: "var(--content-color)"
+            },
+            city: {
+                color: "var(--content-color)"
+            },
+            description: {
+                color: "var(--content-color)"
+            }
+        },
+        workExpe: {
+            box: {
+                ...sharedStyles["4"].box,
+                border: "none"
+            },
+            heading: {
+                ...sharedStyles["4"].heading
+            },
+            sideline: "true",
+            role: {
+                color: "var(--content-color)"
+            },
+            organization: {
+                color: "var(--content-color)"
+            },
+            dates: {
+                color: "var(--content-color)"
+            },
+            wholeList: {
+                color: "var(--content-color)"
+            }
+        }
     }
 }
 
