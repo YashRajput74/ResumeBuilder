@@ -12,7 +12,7 @@ const mockUserData = {
     linkedin: "linkedin.com/in/ayeshatakia",
     skype: "ayesha.takia",
 
-    skills: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub", "JavaScript", "React", "HTML5", "CSS3", "Git & GitHub", "JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
+    skills: ["JavaScript", "React",  "Git & GitHub", "JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
 
     projects: [
         {
@@ -106,30 +106,6 @@ const mockUserData = {
                 "Improved UI performance"
             ]
         },
-        {
-            Role: "Frontend Developer Intern",
-            Organization: "TechNova Pvt Ltd",
-            Location: "Remote",
-            "Start Date": "2023",
-            "End Date": "2024",
-            Description: [
-                "Built reusable React components",
-                "Integrated REST APIs",
-                "Improved UI performance"
-            ]
-        },
-        {
-            Role: "Frontend Developer Intern",
-            Organization: "TechNova Pvt Ltd",
-            Location: "Remote",
-            "Start Date": "2023",
-            "End Date": "2024",
-            Description: [
-                "Built reusable React components",
-                "Integrated REST APIs",
-                "Improved UI performance"
-            ]
-        }
     ],
 
     certifications: [
@@ -172,6 +148,7 @@ const mockUserData = {
             Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
         }
     ],
+    language: ["English", "Japanese", "German"]
 };
 
 export default mockUserData;

@@ -160,7 +160,7 @@ const template3 = {
 
 const template4 = {
     id: 4,
-    name: "Own template",
+    name: "Avatar template",
     layout: {
         grid: {
             templateRows: "auto",
@@ -174,7 +174,7 @@ const template4 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["avatar","contact","summary","skills"]
+                    sections: ["avatar", "contact", "summary", "skills"]
                 },
                 {
                     name: 'rightColumn',
@@ -182,7 +182,7 @@ const template4 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["education","workExperience"]
+                    sections: ["education", "workExperience"]
                 },
             ]
         },
@@ -195,4 +195,56 @@ const template4 = {
     }
 }
 
-export const templates = [template1, template2, template3,template4];
+const template5 = {
+    id: 5,
+    name: "Spacious Two Column",
+    layout: {
+        grid: {
+            templateRows: "3fr 9fr",
+            templateColumns: "2fr 3fr",
+            columnGap: "0rem",
+            areas: [
+                {
+                    name: 'header',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["avatar"],
+                },
+                {
+                    name: "headerLeft",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 2,
+                    colEnd: 3,
+                    sections: ["personalInfo"]
+                },
+                {
+                    name: 'leftColumn',
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["education", "language", "skills"]
+                },
+                {
+                    name: 'rightColumn',
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 2,
+                    colEnd: 3,
+                    sections: ["workExperience", "contact"]
+                }
+            ]
+        },
+        fontFamily: "Times",
+        fontSize: "18px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+}
+
+export const templates = [template1, template2, template3, template4, template5];

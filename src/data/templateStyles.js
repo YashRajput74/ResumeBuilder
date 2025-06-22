@@ -29,6 +29,12 @@ const sharedStyles = {
         box: {
             margin: "25px 0px"
         },
+    },
+    "5": {
+        heading: {
+            borderBottom: "2px solid var(--secondary-color)",
+            textDecoration: "none"
+        },
     }
 };
 
@@ -338,6 +344,12 @@ const templateStyles = {
                 ...sharedStyles["4"].heading
             },
             sideline: "true",
+            timeline: {
+                borderLeft: "3px solid var(--secondary-heading-color)"
+            },
+            dot: {
+                backgroundColor: "var(--secondary-heading-color)"
+            },
             name: {
                 color: "var(--content-color)"
             },
@@ -357,6 +369,12 @@ const templateStyles = {
                 ...sharedStyles["4"].heading
             },
             sideline: "true",
+            timeline: {
+                borderLeft: "3px solid var(--secondary-heading-color)"
+            },
+            dot: {
+                backgroundColor: "var(--secondary-heading-color)"
+            },
             role: {
                 color: "var(--content-color)"
             },
@@ -370,6 +388,108 @@ const templateStyles = {
                 color: "var(--content-color)"
             }
         }
+    },
+    "5": {
+        vars: {
+            '--primary-color': '#163853',
+            '--secondary-color': '#333',
+            '--text-color': 'white',
+        },
+        avatar: {
+            position: {
+                display: "none"
+            },
+            heading: {
+                display: "none"
+            },
+            card: {
+                background: "var(--primary-color)",
+                paddingTop: "0rem",
+                paddingBottom: "0rem"
+            },
+            imageDiv: {
+                position: "relative",
+                background: "white",
+                width: "160px",
+                height: "160px",
+                top: "5rem",
+                marginTop: "0px",
+                border: "6px solid white",
+                boxShadow: "0 0 0 10px var(--primary-color)"
+            }
+        },
+        personalInfo: {
+            box: {
+                backgroundColor: "var(--primary-color)",
+                color: "var(--text-color)"
+            },
+            position: {
+                marginBottom: "5px"
+            }
+        },
+        education: {
+            box: {
+                border: "none",
+                paddingLeft: "0rem",
+                paddingRight: "2rem"
+            },
+            heading: {
+                ...sharedStyles["5"].heading,
+                marginBottom: "1rem"
+            }
+        },
+        skills: {
+            box: {
+                paddingRight: "2rem"
+            },
+            heading: {
+                ...sharedStyles["5"].heading,
+                marginBottom: "1rem"
+            },
+            list: "true",
+            wholeList:{
+                marginLeft: "1rem"
+            }
+        },
+        workExpe: {
+            box: {
+                border: "none",
+                paddingLeft: "0rem"
+            },
+            heading: {
+                ...sharedStyles["5"].heading,
+                marginBottom: "1rem"
+            },
+            sideline: true,
+            timeline:{
+                borderLeft: "2px solid black"
+            },
+            dot:{
+                width: "0px",
+                height:"0px"
+            }
+        },
+        contact:{
+            heading: {
+                ...sharedStyles["5"].heading,
+                marginBottom: "1rem"
+            },
+            visibleFields: ["phoneNo", "email", "address"],
+        },
+        language: {
+            box: {
+                paddingRight: "2rem",
+                marginBottom:"1rem"
+            },
+            heading: {
+                ...sharedStyles["5"].heading,
+                marginBottom: "1rem"
+            },
+            list: "true",
+            wholeList:{
+                marginLeft: "1rem"
+            }
+        },
     }
 }
 

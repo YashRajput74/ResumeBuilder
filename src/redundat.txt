@@ -77,6 +77,12 @@ style: {
                 },
                 bullets:{
 
+                },
+                timeline:{
+                    
+                },
+                dot:{
+
                 }
             },
             projects:{
@@ -190,4 +196,44 @@ style: {
 
                 }
             },
+            avatar:{
+                box:{
+
+                },
+                card:{
+
+                },
+                imageDiv:{
+
+                },
+                image:{
+
+                },
+                heading:{
+
+                },
+                position:{
+                    
+                }
+            },
+            languages:{
+                box:{
+
+                },
+                heading:{
+
+                },
+                everySkillBox:{
+
+                },
+                eachSkillBox:{
+
+                },
+                wholeList:{
+                    
+                }
+                listItem: {
+
+                }
+            }
         },

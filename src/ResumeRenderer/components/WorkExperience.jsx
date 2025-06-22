@@ -2,7 +2,7 @@ import { useResume } from "../../context/ResumeContext";
 
 export default function WorkExperience() {
     const { data, style } = useResume();
-    if (!style.workExpe.sideline) {
+    if (!style.workExpe?.sideline) {
         return (
             <div className="workExperience" style={style?.workExpe?.box}>
                 <h2 style={style?.workExpe?.heading}>Work Experience</h2>
@@ -24,10 +24,10 @@ export default function WorkExperience() {
             <div className="workExperience" style={style?.workExpe?.box}>
                 <h2 style={style?.workExpe?.heading}>Work Experience</h2>
 
-                <div className="timeline">
+                <div className="timeline" style={style?.workExpe?.timeline}>
                     {data.experience.map((exp, index) => (
                         <div className="timeline-item" key={index}>
-                            <div className="dot"></div>
+                            <div className="dot" style={style?.workExpe?.dot}></div>
                             <div className="workPlace" style={style?.workExpe?.eachWorkPlace}>
                                 <h3 style={style?.workExpe?.role}>{exp.Role}</h3>
                                 <h4 style={style?.workExpe?.organization}>{exp.Organization}</h4>

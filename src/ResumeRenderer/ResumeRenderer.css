@@ -219,7 +219,7 @@
     font-size: 1.8rem;
     font-weight: 600;
     margin: 0;
-    color: #5b7bb0;
+    color: black;
 }
 
 .position {
@@ -231,7 +231,7 @@
 .timeline {
     position: relative;
     padding-left: 30px;
-    border-left: 3px solid #4a90e2;
+    border-left: 3px solid black;
     margin-left: 10px;
     margin-top: 10px;
 }
@@ -244,8 +244,37 @@
 .timeline-item .dot {
     width: 12px;
     height: 12px;
-    background-color: #4a90e2;
+    background-color: black;
     border-radius: 50%;
     position: absolute;
     left: -37px;
+}
+
+
+.languages {
+    text-align: var(--left-align);
+}
+
+.languages h2 {
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+.individualLanguage {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--basic-font-size);
+}
+
+.individualLanguage div {
+    padding: 0.5rem;
+    border: var(--basic-black-border);
+}
+
+.languages ul {
+    padding-left: var(--basic-font-size);
+}
+
+.languages ul li {
+    padding-bottom: 0.5rem;
 }

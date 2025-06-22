@@ -9,7 +9,7 @@ export default function Avatar() {
                     <img src={data.profilePhoto} alt="Lorna Alvarado" style={style?.avatar?.image}/>
                 </div>
                 <h2 className="name" style={style?.avatar?.heading}>{data.firstName} <br /> {data.lastName}</h2>
-                <p className="position" style={style?.style?.position}>{data.position}</p>
+                <p className="position" style={style?.avatar?.position}>{data.position}</p>
             </div>
 
         </div>
