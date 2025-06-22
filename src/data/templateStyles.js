@@ -35,6 +35,13 @@ const sharedStyles = {
             borderBottom: "2px solid var(--secondary-color)",
             textDecoration: "none"
         },
+    },
+    "7": {
+        heading: {
+            textDecoration: 'none',
+            borderBottom: '2px solid var(--primary-color)',
+            paddingLeft: '10px'
+        }
     }
 };
 
@@ -420,7 +427,7 @@ const templateStyles = {
         },
         personalInfo: {
             box: {
-
+                border: 'none',
                 color: "var(--text-color)"
             },
             position: {
@@ -570,7 +577,7 @@ const templateStyles = {
                 color: "var(--secondary-color)",
                 textDecoration: "none",
                 borderBottom: "2px solid var(--secondary-color)",
-                marginBottomm: "5px"
+                marginBottom: "5px"
             },
             eachSkillBox: {
                 color: "var(--secondary-color)",
@@ -605,7 +612,7 @@ const templateStyles = {
                 color: "var(--primary-color)",
                 textDecoration: "none",
                 borderBottom: "2px solid var(--primary-color)",
-                marginBottomm: "5px"
+                marginBottom: "5px"
             }
         },
         workExpe: {
@@ -619,7 +626,191 @@ const templateStyles = {
                 color: "var(--primary-color)",
                 textDecoration: "none",
                 borderBottom: "2px solid var(--primary-color)",
-                marginBottomm: "5px"
+                marginBottom: "5px"
+            }
+        }
+    },
+    "7": {
+        vars: {
+            "--primary-color": '#2EBCB0',
+        },
+        avatar: {
+            card: {
+                background: "none",
+                width: "300px",
+                height: '150px',
+            },
+            imageDiv: {
+                marginLeft: '0px'
+            },
+            nextLine: {
+                display: 'none'
+            },
+            sideBox: 'true',
+            innerBox:{
+                position: 'relative',
+                left: '125px',
+                top: '-130px',
+                textAlign:'left'
+            },
+            heading: {
+                color: '#333',
+                fontSize: '32px',
+            },
+            position: {
+                fontSize: '18px',
+                color: 'var(--primary-color)'
+            }
+        },
+        contact: {
+            visibleFields: ["email", "phoneNo", "address", "linkedin"],
+            box: {
+                marginTop: '2rem'
+            },
+            heading: {
+                display: 'none',
+            },
+            innerBox: {
+                display: "flex",
+                justifyContent: "flex-start",
+                flexDirection: "row-reverse"
+            },
+            icon: {
+                color: "var(--primary-color)",
+                marginLeft: "10px",
+                marginRight: '20px'
+            }
+        },
+        summary: {
+            box: {
+                margin: '0px 20px 0px 10px'
+            },
+            heading: {
+                display: 'none'
+            }
+        },
+        workExpe: {
+            box: {
+                border: 'none',
+            },
+            heading: {
+                ...sharedStyles["7"].heading
+            },
+            dates: {
+                color: 'var(--primary-color)'
+            },
+            wholeList: {
+                marginTop: '5px',
+                padding: '4px',
+                borderLeft: '1px solid var(--primary-color)',
+                borderRight: '1px solid var(--primary-color)',
+                backgroundImage: 'linear-gradient(to right, var(--primary-color) 2%, white 2%, white 98%, var(--primary-color) 98%), linear-gradient(to right, var(--primary-color) 2%, white 2%, white 98%, var(--primary-color) 98%)',
+                backgroundSize: '100% 1px',
+                backgroundPosition: 'top, bottom',
+                backgroundRepeat: 'no-repeat'
+            },
+            eachWorkPlace: {
+                paddingLeft: '10px'
+            },
+            sideline: 'false',
+            timeline: {
+                borderLeft: '1px solid var(--primary-color)',
+                paddingLeft: '13px'
+            },
+            dot: {
+                backgroundColor: 'var(--primary-color)',
+                top: '0px',
+                left: '-19px'
+            }
+        },
+        education: {
+            box: {
+                border: 'none'
+            },
+            heading: {
+                ...sharedStyles["7"].heading
+            },
+            eachSchool: {
+                paddingLeft: '10px'
+            },
+            sideline: 'true',
+            timeline: {
+                border: 'none',
+                paddingLeft: '10px'
+            },
+            dot: {
+                backgroundColor: 'var(--primary-color)',
+                top: '7px',
+                left: '-20px'
+            }
+        },
+        skills: {
+            box: {
+                marginBottom: '2rem'
+            },
+            heading: {
+                ...sharedStyles["7"].heading
+            },
+            everySkillBox: {
+                paddingLeft: '10px',
+                rowGap: '10px'
+            },
+            eachSkillBox: {
+                color: 'white',
+                backgroundColor: 'var(--primary-color)',
+                border: 'none',
+                borderRadius: '5px',
+                padding: '6px 8px'
+            }
+        },
+        organiz: {
+            box: {
+                border: 'none',
+                marginBottom: '1rem'
+            },
+            heading: {
+                ...sharedStyles["7"].heading,
+                textAlign: 'left',
+                marginBottom: '10px',
+                color: '#333',
+            },
+            innerBox: {
+                textAlign: 'left',
+                paddingLeft: '10px'
+            },
+            eachOrganiz: {
+                marginBottom: '10px'
+            }
+        },
+        award: {
+            box: {
+                border: 'none',
+                marginBottom: '1rem'
+            },
+            heading: {
+                ...sharedStyles["7"].heading,
+                textAlign: 'left',
+                marginBottom: '10px',
+                color: '#333',
+            },
+            innerBox: {
+                textAlign: 'left',
+                paddingLeft: '10px'
+            },
+            date: {
+                fontStyle: 'italic'
+            },
+            eachAward: {
+                marginBottom: '5px'
+            }
+        },
+        language: {
+            heading: {
+                ...sharedStyles["7"].heading,
+            },
+            list: 'true',
+            wholeList: {
+                paddingLeft: '35px'
             }
         }
     }

@@ -186,7 +186,8 @@ const template4 = {
                 },
             ]
         },
-        fontFamily: "Montserrat",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "18px",
         colorScheme: {
             background: "#ffffff",
@@ -240,8 +241,9 @@ const template5 = {
                 }
             ]
         },
-        fontFamily: "Times",
-        fontSize: "18px",
+        fontFamily: "Montserrat, sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poltawski+Nowy:ital,wght@0,400..700;1,400..700&display=swap",
+        fontSize: "16px",
         colorScheme: {
             background: "#ffffff",
             text: "#333333"
@@ -263,7 +265,7 @@ const template6 = {
                     rowEnd: 2,
                     colStart: 1,
                     colEnd: 2,
-                    sections: ["avatar","contact","summary", "language", "skills"],
+                    sections: ["avatar", "contact", "summary", "language", "skills"],
                     style: { backgroundColor: "#3e465b" }
                 },
                 {
@@ -272,12 +274,13 @@ const template6 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["personalInfo","education", "workExperience","awards"]
+                    sections: ["personalInfo", "education", "workExperience"]
                 }
             ]
         },
         padding: "0mm",
-        fontFamily: "'Lato',serif",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
         fontSize: "18px",
         colorScheme: {
             background: "#ffffff",
@@ -286,4 +289,65 @@ const template6 = {
     }
 }
 
-export const templates = [template1, template2, template3, template4, template5, template6];
+const template7 = {
+    id: 7,
+    name: 'Premium Template',
+    layout: {
+        grid: {
+            templateRows: "1fr 0.2fr 12fr",
+            templateColumns: "1fr 1fr",
+            areas: [
+                {
+                    name: "header",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["avatar"]
+                },
+                {
+                    name: "contact",
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 2,
+                    colEnd: 3,
+                    sections: ["contact"]
+                },
+                {
+                    name: "summary",
+                    rowStart: 2,
+                    rowEnd: 3,
+                    colStart: 1,
+                    colEnd: 3,
+                    sections: ["summary"]
+                },
+                {
+                    name: 'leftcolumn',
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["workExperience", "education"]
+                },
+                {
+                    name: 'rightColumn',
+                    rowStart: 3,
+                    rowEnd: 4,
+                    colStart: 2,
+                    colEnd: 3,
+                    sections: ["skills", "organizations", "awards", "language"]
+                }
+            ]
+        },
+        padding: "0mm",
+        fontFamily: "'Montserrat', sans-serif",
+        fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
+        fontSize: "14px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+}
+
+export const templates = [template1, template2, template3, template4, template5, template6, template7];

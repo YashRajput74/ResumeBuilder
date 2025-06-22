@@ -160,27 +160,40 @@ const mockUserData = {
             Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
         }
     ],
+    award: [
+            {
+                Title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+                Date: 'Venture(USA)'
+            },
+            {
+                Title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+                Date: 'Venture(USA)'
+            },
+            {
+                Title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+                Date: 'Venture(USA)'
+            }
+        ],
     language: ["English", "Japanese", "German"]
 };
 
 export default mockUserData;
 
-
 /* const mockUserData = {
-    firstName: "Jordan",
-    middleName: "",
-    lastName: "Smith",
-    position: "Experienced Technology Executive",
-    email: "john.smith@example.com",
-    phoneNo: "+91 9876543210",
-    address: "123, Park Lane, Delhi, India",
-    summary: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia et ut facilis dolorem debitis provident eos temporibus, repudiandae animi ullam aut dicta veritatis, atque repellat voluptatem? Voluptatum nihil aperiam impedit repellat sapiente asperiores obcaecati totam architecto, tenetur labore corporis nisi",
-    profilePhoto: "",
+    firstName: "Jane",
+    lastName: "Roe",
+    email: "jane.roe@example.com",
+    phoneNo: "202-255-0166",
+    position: "Business Development Manager",
+    address: "New York, USA",
+    summary: "Professional Business Developer with more than four years of expertise in the business development processes. Involved in product testing, management, and development of new business opportunities.",
+    profilePhoto: "https://media-public.canva.com/rmBDc/MAEiuyrmBDc/1/s.jpg",
     portfolio: "",
-    github: "https://github.com/johnSmith",
-    linkedin: "linkedin.com/in/johnSmith",
+    github: "",
+    linkedin: "linkedin.com/in/janedoe",
+    skype: "jane.roe",
 
-    skills: ["Strategic Planning", "Media Relations", "Team Leadership", "Project Management", "Corporate Communications, Event Planning", "Content Development", "Cyber Security", "IoT", "5G", "Cloud"],
+    skills: ["SEO", "Public Speaking", "Negotiation", "Teamwork", "Decision Making", "Research & Strategy", "Emotional Intelligence", "Outbound Marketing", "Email Marketing",'Google Analytics','Sales & Marketing'],
 
     projects: [
         {
@@ -193,91 +206,107 @@ export default mockUserData;
 
     achievements: [
         {
-            Title: "Client Retention Rate",
-            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia et ut facilis dolorem debitis provident eos"
+            Title: "",
+            Description: ""
         },
         {
-            Title: "Team Leadership",
-            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
-        },
-        {
-            Title: "Brand Visibility",
-            Description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati, veniam cum quod officia"
+            Title: "",
+            Description: ""
         }
     ],
-
-    
 
     education: [
         {
-            School: "Stanford University",
-            Degree: "Master's Degree in Business Administration",
-            City: "Standford, Claifornia",
-            "Start Date": "2011",
-            "End Date": "2013",
+            School: "The University of Chicago",
+            Degree: "MSc in Economics and Business Administration",
+            City: "",
+            "Start Date": "09/2008",
+            "End Date": "06/2010",
             Description: ""
         },
-        {
-            School: "University of California",
-            Degree: "Bachelor's Degree in Communications",
-            City: "Berkeley, California",
-            "Start Date": "2007",
-            "End Date": "2011",
-            Description: ""
-        }
     ],
 
     experience: [
-        {
-            Role: "Account Director",
-            Organization: "Edelman",
-            Location: "San Francisco, California",
-            "Start Date": "2019",
-            "End Date": "2023",
-            Description: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati,"
-            ]
-        },
-        {
-            Role: "Senior Account Manager",
-            Organization: "Weber Shandwick",
-            Location: "San Francisco, California",
-            "Start Date": "2016",
-            "End Date": "2019",
-            Description: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati,"
-            ]
-        },
-        {
-            Role: "Account Manager",
-            Organization: "Ketchum",
-            Location: "San Francisco, California",
-            "Start Date": "2013",
-            "End Date": "2016",
-            Description: [
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt",
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati,"
-            ]
-        }
-    ],
+            {
+                Role: "Account Director",
+                Organization: "Edelman",
+                Location: "San Francisco, California",
+                "Start Date": "2019",
+                "End Date": "2023",
+                Description: [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati,"
+                ]
+            },
+            {
+                Role: "Senior Account Manager",
+                Organization: "Weber Shandwick",
+                Location: "San Francisco, California",
+                "Start Date": "2016",
+                "End Date": "2019",
+                Description: [
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt",
+                    "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati,"
+                ]
+            },
+            {
+                Role: "Senior Account Manager",
+                Organization: "Weber Shandwick",
+                Location: "San Francisco, California",
+                "Start Date": "2016",
+                "End Date": "2019",
+                Description: [
+                    "Lorem ipsum dolor sit amet consectetur adipis elit.",
+                    "Lorem ipsum dolor sit amet consectetur aicing elit. Ipsam odit quibusdam sunt",
+                    "Lorem ipsum dolor sit amet cdipisicing elit. Ipsam odit quibusdam sunt dignissimos esse obcaecati,"
+                ]
+            },
+        ],
 
-    certifications: [
-        {
-            Title: "React - Frontend Library",
-            Organization: "freeCodeCamp",
-            Date: "2023"
-        },
-        {
-            Title: "Responsive Web Design",
-            Organization: "Coursera",
-            Date: "2022"
-        }
-    ]
+        certifications: [
+            {
+                Title: "",
+                Organization: "",
+                Date: ""
+            },
+        ],
+        organizations: [
+            {
+                Title: "American Management Association",
+                Date: "(2015-Present)"
+            },
+            {
+                Title: "Association of Private Enterprise Education",
+                Date: "(2014-Present)"
+            },
+            {
+                Title: "eBusiness Association",
+                Date: "(2013-Present)"
+            }
+        ],
+        award: [
+            {
+                Title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+                Date: 'Venture(USA)'
+            },
+            {
+                Title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+                Date: 'Venture(USA)'
+            },
+            {
+                Title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+                Date: 'Venture(USA)'
+            }
+        ],
+        strengths: [
+            {
+                Title: "",
+                Description: ""
+            },
+        ],
+        language: ["English", "Spanish", "French"]
 };
 
 export default mockUserData;

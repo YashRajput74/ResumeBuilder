@@ -13,6 +13,8 @@ import templateStyles from "../data/templateStyles";
 import Organizations from "./components/Organizations";
 import Avatar from "./components/Avatar";
 import Language from "./components/Language";
+import Awards from "./components/Awards";
+import { useEffect } from "react";
 
 const sectionComponents = {
     personalInfo: PersonalInfo,
@@ -26,10 +28,27 @@ const sectionComponents = {
     achievements: Achievements,
     organizations: Organizations,
     avatar: Avatar,
-    language: Language
+    language: Language,
+    awards: Awards
 };
 
 export default function ResumeRenderer({ template, data }) {
+    useEffect(() => {
+        if (!template?.layout?.fontLink) return;
+
+        const existingLink = document.querySelector("link[data-font]");
+
+        if (existingLink?.href !== template.layout.fontLink) {
+            if (existingLink) document.head.removeChild(existingLink);
+
+            const link = document.createElement("link");
+            link.href = template.layout.fontLink;
+            link.rel = "stylesheet";
+            link.setAttribute("data-font", "true");
+            document.head.appendChild(link);
+        }
+    }, [template?.layout?.fontLink]);
+
     const templateId = String(template.id);
     const style = templateStyles[templateId] || {};
     const cssVariables = style.vars || {};
@@ -39,7 +58,7 @@ export default function ResumeRenderer({ template, data }) {
         style
     };
 
-    const { grid, fontFamily, fontSize, colorScheme,padding } = template.layout;
+    const { grid, fontFamily, fontSize, colorScheme, padding } = template.layout;
 
     const renderSection = (sectionName) => {
         const SectionComponent = sectionComponents[sectionName];
