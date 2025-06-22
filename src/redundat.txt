@@ -216,17 +216,17 @@ style: {
                     
                 }
             },
-            languages:{
+            language:{
                 box:{
 
                 },
                 heading:{
 
                 },
-                everySkillBox:{
+                everyLanguageBox:{
 
                 },
-                eachSkillBox:{
+                eachLanguageBox:{
 
                 },
                 wholeList:{

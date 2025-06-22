@@ -39,7 +39,7 @@ export default function ResumeRenderer({ template, data }) {
         style
     };
 
-    const { grid, fontFamily, fontSize, colorScheme } = template.layout;
+    const { grid, fontFamily, fontSize, colorScheme,padding } = template.layout;
 
     const renderSection = (sectionName) => {
         const SectionComponent = sectionComponents[sectionName];
@@ -68,6 +68,7 @@ export default function ResumeRenderer({ template, data }) {
                 style={{
                     fontFamily,
                     fontSize,
+                    padding,
                     background: colorScheme.background,
                     color: colorScheme.text,
                     gridTemplateColumns: grid.templateColumns,

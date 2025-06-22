@@ -276,7 +276,8 @@ const template6 = {
                 }
             ]
         },
-        fontFamily: "Montserrat",
+        padding: "0mm",
+        fontFamily: "'Lato',serif",
         fontSize: "18px",
         colorScheme: {
             background: "#ffffff",
