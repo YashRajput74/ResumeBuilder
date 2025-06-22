@@ -211,6 +211,7 @@ const template5 = {
                     colStart: 1,
                     colEnd: 2,
                     sections: ["avatar"],
+                    style: { background: "linear-gradient(to bottom, #163853 0%, #163853 66%, #ffffff 66%, #ffffff 100%)" }
                 },
                 {
                     name: "headerLeft",
@@ -218,7 +219,8 @@ const template5 = {
                     rowEnd: 2,
                     colStart: 2,
                     colEnd: 3,
-                    sections: ["personalInfo"]
+                    sections: ["personalInfo"],
+                    style: { background: "linear-gradient(to bottom, #163853 0%, #163853 66%, #ffffff 66%, #ffffff 100%)" }
                 },
                 {
                     name: 'leftColumn',
@@ -247,4 +249,40 @@ const template5 = {
     }
 }
 
-export const templates = [template1, template2, template3, template4, template5];
+const template6 = {
+    id: 6,
+    name: "Simple Tactical",
+    layout: {
+        grid: {
+            templateRows: "auto",
+            templateColumns: "2fr 3fr",
+            areas: [
+                {
+                    name: 'leftColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 1,
+                    colEnd: 2,
+                    sections: ["avatar","contact","summary", "language", "skills"],
+                    style: { backgroundColor: "#3e465b" }
+                },
+                {
+                    name: 'rightColumn',
+                    rowStart: 1,
+                    rowEnd: 2,
+                    colStart: 2,
+                    colEnd: 3,
+                    sections: ["personalInfo","education", "workExperience","awards"]
+                }
+            ]
+        },
+        fontFamily: "Montserrat",
+        fontSize: "18px",
+        colorScheme: {
+            background: "#ffffff",
+            text: "#333333"
+        }
+    }
+}
+
+export const templates = [template1, template2, template3, template4, template5, template6];

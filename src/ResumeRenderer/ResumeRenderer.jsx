@@ -33,7 +33,7 @@ export default function ResumeRenderer({ template, data }) {
     const templateId = String(template.id);
     const style = templateStyles[templateId] || {};
     const cssVariables = style.vars || {};
-    
+
     const contextValue = {
         data,
         style
@@ -79,15 +79,12 @@ export default function ResumeRenderer({ template, data }) {
                 }}
             >
                 {grid.areas.map((area, index) => (
-                    <div key={index} style={{ gridArea: area.name }}>
-                        {area.sections.map((section) => {
-                            /* const sectionStyle = style?.[section]?.box || {}; */
-                            return (
-                                <div key={section} /* style={sectionStyle} */>
-                                    {renderSection(section)}
-                                </div>
-                            );
-                        })}
+                    <div key={index} style={{ gridArea: area.name, ...(area.style || {}) }}>
+                        {area.sections.map((section) => (
+                            <div key={section} style={style?.[section]?.box}>
+                                {renderSection(section)}
+                            </div>
+                        ))}
                     </div>
                 ))}
             </div>

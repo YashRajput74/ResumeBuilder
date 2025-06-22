@@ -420,7 +420,7 @@ const templateStyles = {
         },
         personalInfo: {
             box: {
-                backgroundColor: "var(--primary-color)",
+                
                 color: "var(--text-color)"
             },
             position: {
@@ -490,6 +490,15 @@ const templateStyles = {
                 marginLeft: "1rem"
             }
         },
+    },
+    "6":{
+        vars:{
+            "--primary-color":"#3e465b",
+            "--primary-font-color": "white"
+        },
+        avatar:{
+            
+        }
     }
 }
 

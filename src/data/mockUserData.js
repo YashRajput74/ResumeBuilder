@@ -106,6 +106,18 @@ const mockUserData = {
                 "Improved UI performance"
             ]
         },
+        {
+            Role: "Frontend Developer Intern",
+            Organization: "TechNova Pvt Ltd",
+            Location: "Remote",
+            "Start Date": "2023",
+            "End Date": "2024",
+            Description: [
+                "Built reusable React components",
+                "Integrated REST APIs",
+                "Improved UI performance"
+            ]
+        },
     ],
 
     certifications: [
