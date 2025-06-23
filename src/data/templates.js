@@ -281,7 +281,7 @@ const template6 = {
         padding: "0mm",
         fontFamily: "'Montserrat', sans-serif",
         fontLink: "https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap",
-        fontSize: "18px",
+        fontSize: "14px",
         colorScheme: {
             background: "#ffffff",
             text: "#333333"
@@ -322,7 +322,7 @@ const template7 = {
                     sections: ["summary"]
                 },
                 {
-                    name: 'leftcolumn',
+                    name: 'leftColumn',
                     rowStart: 3,
                     rowEnd: 4,
                     colStart: 1,

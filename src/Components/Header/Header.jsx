@@ -1,4 +1,5 @@
 import './Header.css';
+import { Link } from "react-router-dom";
 
 export default function Header() {
     return (
@@ -9,8 +10,8 @@ export default function Header() {
                 <a href="#solutions">About ▾</a>
                 <a href="#features">Features ▾</a>
                 <a href="#templates">Templates</a>
-                <a href="#login">Log in</a>
-                <a className="signup" href="#signup">Sign Up</a>
+                <Link to="/auth">Log in</Link>
+                <Link to="/auth" className="signup">Sign Up</Link>
             </nav>
         </header>
     );

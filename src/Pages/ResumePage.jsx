@@ -5,16 +5,31 @@ import ResumeRenderer from "../ResumeRenderer/ResumeRenderer";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import { useEffect, useState } from "react";
+import { supabase } from "../supabaseClient";
 
 export default function ResumePage() {
+
+    const [user, setUser] = useState(null);
+
+    useEffect(() => {
+        supabase.auth.getUser().then(({ data: { user } }) => {
+            setUser(user);
+        });
+    }, []);
     const { templateId } = useParams();
-    const template  = templates.find(t => t.id === parseInt(templateId));
+    const template = templates.find(t => t.id === parseInt(templateId));
     const navigate = useNavigate();
     const resumeRef = useRef();
 
     if (!template) return <p>Template not found</p>;
 
     const handleDownload = () => {
+        if (!user) {
+            navigate("/auth");
+            return;
+        }
+
         const input = resumeRef.current;
         html2canvas(input).then((canvas) => {
             const imgData = canvas.toDataURL("image/png");
@@ -26,6 +41,7 @@ export default function ResumePage() {
             pdf.save("my-resume.pdf");
         });
     };
+
 
     return (
         <div style={{ padding: "2rem", textAlign: "center" }}>
