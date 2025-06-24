@@ -1,15 +1,27 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom'
 import "./App.css"
 import HomePage from "./Pages/HomePage"
 import ResumePage from "./Pages/ResumePage"
 import AllTemplatesPage from './Pages/AllTemplatePage'
 import AuthPage from './Features/AuthPage/AuthPage'
+import { useEffect } from 'react'
+
+function ScrollToTop() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [pathname]);
+
+    return null;
+}
 
 export default function App() {
 
     return (
         <>
             <Router>
+                <ScrollToTop />
                 <Routes>
                     <Route path='/' element={<HomePage />} />
                     <Route path='/resume/:templateId' element={<ResumePage />} />

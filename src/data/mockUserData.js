@@ -1,16 +1,16 @@
 const mockUserData = {
-    firstName: "Ayesha",
-    lastName: "Takia",
-    email: "ayesha.takia@example.com",
+    firstName: "Jane",
+    lastName: "Doe",
+    email: "jane.doe@example.com",
     phoneNo: "+91 9876543210",
     position: "Web Developer",
     address: "123, Park Lane, Delhi, India",
     summary: "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consequatur at harum, rem rerum vitae id praesentium placeat deserunt sit voluptatum iusto facere qui consectetur,",
     profilePhoto: "https://media-public.canva.com/rmBDc/MAEiuyrmBDc/1/s.jpg",
-    portfolio: "https://ayesha-portfolio.netlify.app",
-    github: "https://github.com/YashRajput74",
-    linkedin: "linkedin.com/in/ayeshatakia",
-    skype: "ayesha.takia",
+    portfolio: "https://jane-portfolio.netlify.app",
+    github: "https://github.com/janeDoe",
+    linkedin: "linkedin.com/in/janeDone",
+    skype: "jane.doe",
 
     skills: ["JavaScript", "React",  "Git & GitHub", "JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
 
