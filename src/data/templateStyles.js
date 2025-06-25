@@ -205,6 +205,7 @@ const templateStyles = {
             }
         },
         summary: {
+            headingText: "Profile Summary",
             box: {
                 marginBottom: "25px"
             },
@@ -326,6 +327,7 @@ const templateStyles = {
             },
         },
         summary: {
+            headingText: "Profile Summary",
             box: {
                 ...sharedStyles["4"].box
             },
@@ -536,6 +538,7 @@ const templateStyles = {
             }
         },
         summary: {
+            headingText: "Profile Summary",
             box: {
                 paddingRight: "1rem",
                 paddingLeft: "1rem"
@@ -682,6 +685,7 @@ const templateStyles = {
             }
         },
         summary: {
+            headingText: "Profile Summary",
             box: {
                 margin: '0px 20px 0px 10px'
             },

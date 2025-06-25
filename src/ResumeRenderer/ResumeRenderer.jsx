@@ -32,7 +32,7 @@ const sectionComponents = {
     awards: Awards
 };
 
-export default function ResumeRenderer({ template, data }) {
+export default function ResumeRenderer({ template, data, setData, editMode, selectedSection, setSelectedSection }) {
     useEffect(() => {
         if (!template?.layout?.fontLink) return;
 
@@ -55,7 +55,11 @@ export default function ResumeRenderer({ template, data }) {
 
     const contextValue = {
         data,
-        style
+        setData,
+        style,
+        editMode,
+        selectedSection,
+        setSelectedSection
     };
 
     const { grid, fontFamily, fontSize, colorScheme, padding } = template.layout;
@@ -101,7 +105,18 @@ export default function ResumeRenderer({ template, data }) {
                 {grid.areas.map((area, index) => (
                     <div key={index} style={{ gridArea: area.name, ...(area.style || {}) }}>
                         {area.sections.map((section) => (
-                            <div key={section} style={style?.[section]?.box}>
+                            <div
+                                key={section}
+                                onClick={() => {
+                                    if (editMode) setSelectedSection(section);
+                                }}
+                                style={{
+                                    ...style?.[section]?.box,
+                                    outline: editMode && selectedSection === section ? "2px dashed var(--primary-color)" : "none",
+                                    cursor: editMode ? "pointer" : "default",
+                                    borderRadius: "4px"
+                                }}
+                            >
                                 {renderSection(section)}
                             </div>
                         ))}
