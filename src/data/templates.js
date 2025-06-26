@@ -1,4 +1,4 @@
-export const template1 = {
+const template1 = {
     id: 1,
     name: "Modern Grid",
     layout: {
@@ -289,7 +289,7 @@ const template6 = {
     }
 }
 
-const template7 = {
+/* const template7 = {
     id: 7,
     name: 'Premium Template',
     layout: {
@@ -348,6 +348,36 @@ const template7 = {
             text: "#333333"
         }
     }
+} */
+
+const template7 = {
+    id: 7,
+    name: 'Premium Template',
+    layout: {
+        areas: [
+            {
+                name: 'leftColumn',
+                sections: ['experience', 'education']
+            },
+            {
+                name: 'rightColumn',
+                sections: ['skills', 'certifications', 'language']
+            }
+        ]
+    },
+    metadata: {
+        grid: {
+            rows: 3,
+            columns: 2
+        }
+    }
 }
 
+/* const userSections = [
+  { id: 'sec1', type: 'experience', data: [...] },
+  { id: 'sec2', type: 'education', data: [...] },
+  { id: 'sec3', type: 'skills', data: [...] },
+  ...
+]
+ */
 export const templates = [template1, template2, template3, template4, template5, template6, template7];
