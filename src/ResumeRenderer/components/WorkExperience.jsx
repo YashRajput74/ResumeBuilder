@@ -1,13 +1,23 @@
 import { useResume } from "../../context/ResumeContext";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
+import EditableText from "../../Features/ResumeEditor/EditableText";
+import SimpleEditableText from "../../Features/ResumeEditor/SimpleEditableText";
 
 export default function WorkExperience() {
     const { data, style } = useResume();
     const workExperience = data.workExperience || [];
 
-    const bulletIcon = style?.workExperience?.icon;
+    const bulletIcon = style?.workExperience?.icon || faBriefcase;
     const useCustomBullets = style?.workExperience?.useCustomBullets ?? true;
+
+    const updatePlain = (index, field, value) => {
+        data.workExperience[index][field] = value;
+    };
+
+    const updateDescription = (jobIndex, descIndex, newFragments) => {
+        data.workExperience[jobIndex].description[descIndex].fragments = newFragments;
+    };
 
     return (
         <div className="workExperience" style={style?.workExperience?.box}>
@@ -16,20 +26,43 @@ export default function WorkExperience() {
             {workExperience.map((job, index) => (
                 <div key={index} style={style?.workExperience?.jobBox}>
                     <div style={style?.workExperience?.titleBox}>
-                        <h3 style={style?.workExperience?.role}>{job.role}</h3>
+                        <h3 style={style?.workExperience?.role}>
+                            <SimpleEditableText
+                                text={job.role}
+                                onChange={(v) => updatePlain(index, "role", v)}
+                            />
+                        </h3>
+
                         <span style={style?.workExperience?.orgLoc}>
-                            {job.organization} — {job.location}
+                            <SimpleEditableText
+                                text={job.organization}
+                                onChange={(v) => updatePlain(index, "organization", v)}
+                            />{" "}
+                            —{" "}
+                            <SimpleEditableText
+                                text={job.location}
+                                onChange={(v) => updatePlain(index, "location", v)}
+                            />
                         </span>
+
                         <span style={style?.workExperience?.dates}>
-                            {job.startDate} – {job.endDate}
+                            <SimpleEditableText
+                                text={job.startDate}
+                                onChange={(v) => updatePlain(index, "startDate", v)}
+                            />{" "}
+                            –{" "}
+                            <SimpleEditableText
+                                text={job.endDate}
+                                onChange={(v) => updatePlain(index, "endDate", v)}
+                            />
                         </span>
                     </div>
 
                     <ul
                         style={{
                             ...style?.workExperience?.list,
-                            listStyle: useCustomBullets ? 'none' : 'disc',
-                            paddingLeft: useCustomBullets ? '0' : '1.25rem',
+                            listStyle: useCustomBullets ? "none" : "disc",
+                            paddingLeft: useCustomBullets ? "0" : "1.25rem",
                         }}
                     >
                         {job.description.map((desc, i) => (
@@ -40,19 +73,10 @@ export default function WorkExperience() {
                                         style={style?.workExperience?.bulletIcon}
                                     />
                                 )}
-                                {desc.fragments.map((frag, j) => (
-                                    <span
-                                        key={j}
-                                        style={{
-                                            fontWeight: frag.bold ? 'bold' : 'normal',
-                                            fontStyle: frag.italic ? 'italic' : 'normal',
-                                            textDecoration: frag.underline ? 'underline' : 'none',
-                                            ...style?.workExperience?.fragment,
-                                        }}
-                                    >
-                                        {frag.text}
-                                    </span>
-                                ))}
+                                <EditableText
+                                    fragments={desc.fragments}
+                                    onChange={(f) => updateDescription(index, i, f)}
+                                />
                             </li>
                         ))}
                     </ul>
