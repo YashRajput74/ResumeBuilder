@@ -16,6 +16,7 @@
     border: 1px solid #ccc;
     background-color: white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #1A1A1A;
 }
 
 .personalInfo {
@@ -23,8 +24,35 @@
     text-align: var(--left-align);
 }
 
+.personalInfo p{
+    margin-bottom: 0.5rem;
+}
+
+.contactSection{
+    text-align: var(--left-align);
+    margin-bottom: 1.5rem;
+}
+
+.FAIcon{
+    margin-right: 7px;
+}
+
+.contactSection ul li{
+    margin-top: 3px;
+}
+
 .skills {
     text-align: var(--left-align);
+}
+
+.skillsGrid{
+    display: flex;
+    flex-wrap: wrap;
+}
+.skillsGrid div{
+    padding: 0.5rem;
+    border: 1px solid black;
+    margin: 5px;
 }
 
 .workExperience {

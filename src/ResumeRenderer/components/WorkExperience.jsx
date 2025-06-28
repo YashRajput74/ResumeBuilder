@@ -1,49 +1,63 @@
 import { useResume } from "../../context/ResumeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 
 export default function WorkExperience() {
     const { data, style } = useResume();
-    if (!style.workExpe?.sideline) {
-        return (
-            <div className="workExperience" style={style?.workExpe?.box}>
-                <h2 style={style?.workExpe?.heading}>Work Experience</h2>
-                {data.experience.map((exp, index) => (
-                    <div className="workPlace" key={index} style={style?.workExpe?.eachWorkPlace}>
-                        <h3 style={style?.workExpe?.role}>{exp.Role}</h3>
-                        <h4 style={style?.workExpe?.organization}> {exp.Organization}</h4>
-                        <p style={style?.workExpe?.dates}>{exp.Location} | {exp["Start Date"]} - {exp["End Date"]}</p>
-                        <ul style={style?.workExpe?.wholeList}>
-                            {exp.Description.map((item, i) => <li key={i} style={style?.workExpe?.bullets}>{item}</li>)}
-                        </ul>
-                    </div>
-                ))}
-            </div>
-        );
-    }
-    else {
-        return (
-            <div className="workExperience" style={style?.workExpe?.box}>
-                <h2 style={style?.workExpe?.heading}>Work Experience</h2>
+    const workExperience = data.workExperience || [];
 
-                <div className="timeline" style={style?.workExpe?.timeline}>
-                    {data.experience.map((exp, index) => (
-                        <div className="timeline-item" key={index}>
-                            <div className="dot" style={style?.workExpe?.dot}></div>
-                            <div className="workPlace" style={style?.workExpe?.eachWorkPlace}>
-                                <h3 style={style?.workExpe?.role}>{exp.Role}</h3>
-                                <h4 style={style?.workExpe?.organization}>{exp.Organization}</h4>
-                                <p style={style?.workExpe?.dates}>
-                                    {exp.Location} | {exp["Start Date"]} - {exp["End Date"]}
-                                </p>
-                                <ul style={style?.workExpe?.wholeList}>
-                                    {exp.Description.map((item, i) => (
-                                        <li key={i} style={style?.workExpe?.bullets}>{item}</li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </div>
-                    ))}
+    const bulletIcon = style?.workExperience?.icon;
+    const useCustomBullets = style?.workExperience?.useCustomBullets ?? true;
+
+    return (
+        <div className="workExperience" style={style?.workExperience?.box}>
+            <h2 style={style?.workExperience?.heading}>Work Experience</h2>
+
+            {workExperience.map((job, index) => (
+                <div key={index} style={style?.workExperience?.jobBox}>
+                    <div style={style?.workExperience?.titleBox}>
+                        <h3 style={style?.workExperience?.role}>{job.role}</h3>
+                        <span style={style?.workExperience?.orgLoc}>
+                            {job.organization} — {job.location}
+                        </span>
+                        <span style={style?.workExperience?.dates}>
+                            {job.startDate} – {job.endDate}
+                        </span>
+                    </div>
+
+                    <ul
+                        style={{
+                            ...style?.workExperience?.list,
+                            listStyle: useCustomBullets ? 'none' : 'disc',
+                            paddingLeft: useCustomBullets ? '0' : '1.25rem',
+                        }}
+                    >
+                        {job.description.map((desc, i) => (
+                            <li key={i} style={style?.workExperience?.listItem}>
+                                {useCustomBullets && (
+                                    <FontAwesomeIcon
+                                        icon={bulletIcon}
+                                        style={style?.workExperience?.bulletIcon}
+                                    />
+                                )}
+                                {desc.fragments.map((frag, j) => (
+                                    <span
+                                        key={j}
+                                        style={{
+                                            fontWeight: frag.bold ? 'bold' : 'normal',
+                                            fontStyle: frag.italic ? 'italic' : 'normal',
+                                            textDecoration: frag.underline ? 'underline' : 'none',
+                                            ...style?.workExperience?.fragment,
+                                        }}
+                                    >
+                                        {frag.text}
+                                    </span>
+                                ))}
+                            </li>
+                        ))}
+                    </ul>
                 </div>
-            </div>
-        )
-    }
+            ))}
+        </div>
+    );
 }

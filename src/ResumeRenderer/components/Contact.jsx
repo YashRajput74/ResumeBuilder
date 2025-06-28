@@ -1,42 +1,60 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope, faLocationDot, faGlobe } from '@fortawesome/free-solid-svg-icons';
-import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
-import { useResume } from '../../context/ResumeContext';
+import { useResume } from "../../context/ResumeContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function Contact() {
     const { data, style } = useResume();
-
-    const contactFields = {
-        phoneNo: { icon: faPhone, label: data.phoneNo, isLink: false },
-        email: { icon: faEnvelope, label: data.email, isLink: false },
-        address: { icon: faLocationDot, label: data.address, isLink: false },
-        portfolio: { icon: faGlobe, label: data.portfolio, isLink: true, display: "Portfolio" },
-        linkedin: { icon: faLinkedin, label: data.linkedin, isLink: true, display: "Linkedin" },
-        github: { icon: faGithub, label: data.github, isLink: true, display: "Github" }
-    };
-
-    const visible = style?.contact?.visibleFields || [];
+    const contact = data.contact || {};
+    const contactOrder = style?.contact?.order || Object.keys(contact);
 
     return (
-        <div className="contactList" style={style?.contact?.box}>
+        <div className="contactSection" style={style?.contact?.box}>
             <h2 style={style?.contact?.heading}>Contact</h2>
-            {visible.map((key, index) => {
-                const field = contactFields[key];
-                if (!field || !field.label) return null;
+            <ul style={style?.contact?.list}>
+                {contactOrder.map((key, index) => {
+                    const value = contact[key];
+                    const icon = style?.contact?.icons?.[key];
 
-                return (
-                    <div className="contactItem" style={style?.contact?.innerBox} key={index}>
-                        <FontAwesomeIcon icon={field.icon} style={style?.contact?.icon} />
-                        {field.isLink ? (
-                            <a href={field.label} style={style?.contact?.anchor}>
-                                {field.display}
-                            </a>
-                        ) : (
-                            <p style={style?.contact?.content}>{field.label}</p>
-                        )}
-                    </div>
-                );
-            })}
+                    if (!value) return null;
+
+                    const isLink =
+                        key === "email" ||
+                        key === "github" ||
+                        key === "linkedin" ||
+                        key === "portfolio" ||
+                        key === "skype";
+
+                    const href =
+                        key === "email"
+                            ? `mailto:${value}`
+                            : key === "skype"
+                            ? `skype:${value}?chat`
+                            : value;
+
+                    return (
+                        <li key={index} style={style?.contact?.item}>
+                            {icon && (
+                                <FontAwesomeIcon
+                                    className="FAIcon"
+                                    icon={icon}
+                                    style={style?.contact?.icon}
+                                />
+                            )}
+                            {isLink ? (
+                                <a
+                                    href={href}
+                                    style={style?.contact?.link}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                >
+                                    {value}
+                                </a>
+                            ) : (
+                                <span style={style?.contact?.text}>{value}</span>
+                            )}
+                        </li>
+                    );
+                })}
+            </ul>
         </div>
-    )
+    );
 }

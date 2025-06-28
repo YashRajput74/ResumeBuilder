@@ -14,6 +14,7 @@ const mockUserData = {
             ]
         }
     },
+    
     contact:{
         email: "janeDoe.profile@example.com",
         phoneNo: "+91 9876543210",
@@ -147,7 +148,7 @@ const mockUserData = {
         }
     ],
 
-    experience: [
+    workExperience: [
         {
             role: "Frontend Developer Intern",
             organization: "TechNova Pvt Ltd",
