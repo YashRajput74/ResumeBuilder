@@ -121,105 +121,116 @@ export default function EditableText({ fragments = [], onChange }) {
 } */
 
 import { useState, useEffect, useRef } from "react";
-import "./EditableText.css"; // optional for styling
 
 export default function EditableText({ fragments = [], onChange }) {
     const [isEditing, setIsEditing] = useState(false);
-    const editorRef = useRef(null);
+    const [selection, setSelection] = useState(null);
+    const [content, setContent] = useState([]);
+    const editableRef = useRef();
 
-    // Convert fragments to HTML string
-    const toInitialHTML = () => {
-        return fragments
-            .map((frag) => {
-                const openTags = [];
-                if (frag.bold) openTags.push("b");
-                if (frag.italic) openTags.push("i");
-                if (frag.underline) openTags.push("u");
-
-                let inner = frag.text;
-                openTags.reverse().forEach((tag) => {
-                    inner = `<${tag}>${inner}</${tag}>`;
-                });
-
-                return inner;
-            })
-            .join("");
-    };
-
-    // Convert edited HTML to fragment array
-    const toFragments = (html) => {
-        const tempDiv = document.createElement("div");
-        tempDiv.innerHTML = html;
-        const result = [];
-
-        const traverse = (node, format = {}) => {
-            if (node.nodeType === Node.TEXT_NODE) {
-                result.push({
-                    text: node.textContent,
-                    bold: format.bold || false,
-                    italic: format.italic || false,
-                    underline: format.underline || false,
-                });
-            } else if (node.nodeType === Node.ELEMENT_NODE) {
-                const tag = node.tagName.toLowerCase();
-                const newFormat = {
-                    bold: format.bold || tag === "b" || tag === "strong",
-                    italic: format.italic || tag === "i" || tag === "em",
-                    underline: format.underline || tag === "u",
-                };
-                node.childNodes.forEach((child) => traverse(child, newFormat));
-            }
-        };
-
-        tempDiv.childNodes.forEach((child) => traverse(child));
-        return result;
-    };
+    useEffect(() => {
+        setContent(fragments);
+    }, [fragments]);
 
     const handleBlur = () => {
+        if (!editableRef.current) return;
+
+        const spans = Array.from(editableRef.current.childNodes);
+        const updatedFragments = spans.map((node) => ({
+            text: node.textContent,
+            bold: node.style.fontWeight === "bold",
+            italic: node.style.fontStyle === "italic",
+            underline: node.style.textDecoration.includes("underline"),
+        }));
+
         setIsEditing(false);
-        const html = editorRef.current.innerHTML;
-        const newFragments = toFragments(html);
-        onChange(newFragments);
+        onChange(updatedFragments);
     };
 
+    const execCommand = (styleType) => {
+        const selection = window.getSelection();
+        if (!selection.rangeCount) return;
+
+        const range = selection.getRangeAt(0);
+        const selectedText = range.toString();
+        if (!selectedText) return;
+
+        const span = document.createElement("span");
+        span.textContent = selectedText;
+
+        switch (styleType) {
+            case "bold":
+                span.style.fontWeight = "bold";
+                break;
+            case "italic":
+                span.style.fontStyle = "italic";
+                break;
+            case "underline":
+                span.style.textDecoration = "underline";
+                break;
+            case "link": {
+                const url = prompt("Enter URL:");
+                if (url) {
+                    const a = document.createElement("a");
+                    a.href = url;
+                    a.target = "_blank";
+                    a.rel = "noreferrer";
+                    a.textContent = selectedText;
+                    a.style.textDecoration = "underline";
+                    a.style.color = "blue";
+                    range.deleteContents();
+                    range.insertNode(a);
+                }
+                return;
+            }
+            default:
+                break;
+        }
+
+        range.deleteContents();
+        range.insertNode(span);
+    };
+
+    const renderToolbar = () => (
+        <div style={{ display: "flex", gap: "6px", marginBottom: "4px" }}>
+            <button onMouseDown={(e) => { e.preventDefault(); execCommand("bold"); }}><b>B</b></button>
+            <button onMouseDown={(e) => { e.preventDefault(); execCommand("italic"); }}><i>I</i></button>
+            <button onMouseDown={(e) => { e.preventDefault(); execCommand("underline"); }}><u>U</u></button>
+            <button onMouseDown={(e) => { e.preventDefault(); execCommand("link"); }}>🔗</button>
+        </div>
+    );
+
     return (
-        <div className="editable-text-wrapper">
-            {isEditing ? (
-                <div
-                    ref={editorRef}
-                    contentEditable
-                    suppressContentEditableWarning
-                    onBlur={handleBlur}
-                    dangerouslySetInnerHTML={{ __html: toInitialHTML() }}
-                    style={{
-                        minHeight: "1.5em",
-                        border: "1px dashed #aaa",
-                        padding: "2px 6px",
-                        borderRadius: "4px",
-                        background: "#fff",
-                        cursor: "text",
-                    }}
-                />
-            ) : (
-                <div
-                    ref={editorRef}
-                    onClick={() => setIsEditing(true)}
-                    style={{ cursor: "text" }}
-                >
-                    {fragments.map((frag, i) => (
-                        <span
-                            key={i}
-                            style={{
-                                fontWeight: frag.bold ? "bold" : "normal",
-                                fontStyle: frag.italic ? "italic" : "normal",
-                                textDecoration: frag.underline ? "underline" : "none",
-                            }}
-                        >
-                            {frag.text}
-                        </span>
-                    ))}
-                </div>
-            )}
+        <div>
+            {isEditing && renderToolbar()}
+
+            <div
+                ref={editableRef}
+                contentEditable
+                suppressContentEditableWarning
+                onBlur={handleBlur}
+                onClick={() => setIsEditing(true)}
+                style={{
+                    cursor: "text",
+                    border: 'none',
+                    borderBottom: isEditing ? "1px solid" : "none",
+                    background: isEditing ? "#f9f9f9" : "transparent",
+                    outline: 'none'
+                }}
+            >
+                {content.map((frag, i) => (
+                    <span
+                        key={i}
+                        style={{
+                            fontWeight: frag.bold ? "bold" : "normal",
+                            fontStyle: frag.italic ? "italic" : "normal",
+                            textDecoration: frag.underline ? "underline" : "none",
+                        }}
+                    >
+                        {frag.text}
+                    </span>
+                ))}
+            </div>
         </div>
     );
 }
