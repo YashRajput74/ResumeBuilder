@@ -119,30 +119,42 @@ export default function EditableText({ fragments = [], onChange }) {
         </span>    
     );    
 } */
-
 import { useState, useEffect, useRef } from "react";
 
 export default function EditableText({ fragments = [], onChange }) {
     const [isEditing, setIsEditing] = useState(false);
-    const [selection, setSelection] = useState(null);
-    const [content, setContent] = useState([]);
     const editableRef = useRef();
 
     useEffect(() => {
-        setContent(fragments);
-    }, [fragments]);
+        if (!isEditing) {
+            // Update editable HTML only when not editing
+            const html = fragments.map(frag => {
+                const span = document.createElement("span");
+                span.textContent = frag.text;
+                if (frag.bold) span.style.fontWeight = "bold";
+                if (frag.italic) span.style.fontStyle = "italic";
+                if (frag.underline) span.style.textDecoration = "underline";
+                return span.outerHTML;
+            }).join("");
 
-    const handleBlur = () => {
-        if (!editableRef.current) return;
+            if (editableRef.current) {
+                editableRef.current.innerHTML = html;
+            }
+        }
+    }, [fragments, isEditing]);
 
+    const extractFragmentsFromDOM = () => {
         const spans = Array.from(editableRef.current.childNodes);
-        const updatedFragments = spans.map((node) => ({
+        return spans.map((node) => ({
             text: node.textContent,
             bold: node.style.fontWeight === "bold",
             italic: node.style.fontStyle === "italic",
             underline: node.style.textDecoration.includes("underline"),
         }));
+    };
 
+    const handleBlur = () => {
+        const updatedFragments = extractFragmentsFromDOM();
         setIsEditing(false);
         onChange(updatedFragments);
     };
@@ -180,8 +192,9 @@ export default function EditableText({ fragments = [], onChange }) {
                     a.style.color = "blue";
                     range.deleteContents();
                     range.insertNode(a);
+                    return;
                 }
-                return;
+                break;
             }
             default:
                 break;
@@ -189,6 +202,10 @@ export default function EditableText({ fragments = [], onChange }) {
 
         range.deleteContents();
         range.insertNode(span);
+
+        // Sync updated content to fragments and notify parent
+        const updatedFragments = extractFragmentsFromDOM();
+        onChange(updatedFragments);
     };
 
     const renderToolbar = () => (
@@ -203,7 +220,6 @@ export default function EditableText({ fragments = [], onChange }) {
     return (
         <div>
             {isEditing && renderToolbar()}
-
             <div
                 ref={editableRef}
                 contentEditable
@@ -217,20 +233,7 @@ export default function EditableText({ fragments = [], onChange }) {
                     background: isEditing ? "#f9f9f9" : "transparent",
                     outline: 'none'
                 }}
-            >
-                {content.map((frag, i) => (
-                    <span
-                        key={i}
-                        style={{
-                            fontWeight: frag.bold ? "bold" : "normal",
-                            fontStyle: frag.italic ? "italic" : "normal",
-                            textDecoration: frag.underline ? "underline" : "none",
-                        }}
-                    >
-                        {frag.text}
-                    </span>
-                ))}
-            </div>
+            />
         </div>
     );
 }

@@ -4,7 +4,7 @@ import { faBriefcase } from "@fortawesome/free-solid-svg-icons";
 import EditableText from "../../Features/ResumeEditor/EditableText";
 import SimpleEditableText from "../../Features/ResumeEditor/SimpleEditableText";
 
-export default function WorkExperience() {
+export default function WorkExperience({ editMode }) {
     const { data, style } = useResume();
     const workExperience = data.workExperience || [];
 
@@ -27,34 +27,48 @@ export default function WorkExperience() {
                 <div key={index} style={style?.workExperience?.jobBox}>
                     <div style={style?.workExperience?.titleBox}>
                         <h3 style={style?.workExperience?.role}>
-                            <SimpleEditableText
-                                text={job.role}
-                                onChange={(v) => updatePlain(index, "role", v)}
-                            />
+                            {editMode ? (
+                                <SimpleEditableText
+                                    text={job.role}
+                                    onChange={(v) => updatePlain(index, "role", v)}
+                                />
+                            ) : job.role}
                         </h3>
 
                         <span style={style?.workExperience?.orgLoc}>
-                            <SimpleEditableText
-                                text={job.organization}
-                                onChange={(v) => updatePlain(index, "organization", v)}
-                            />{" "}
-                            —{" "}
-                            <SimpleEditableText
-                                text={job.location}
-                                onChange={(v) => updatePlain(index, "location", v)}
-                            />
+                            {editMode ? (
+                                <>
+                                    <SimpleEditableText
+                                        text={job.organization}
+                                        onChange={(v) => updatePlain(index, "organization", v)}
+                                    />{" "}
+                                    —{" "}
+                                    <SimpleEditableText
+                                        text={job.location}
+                                        onChange={(v) => updatePlain(index, "location", v)}
+                                    />
+                                </>
+                            ) : (
+                                `${job.organization} — ${job.location}`
+                            )}
                         </span>
 
                         <span style={style?.workExperience?.dates}>
-                            <SimpleEditableText
-                                text={job.startDate}
-                                onChange={(v) => updatePlain(index, "startDate", v)}
-                            />{" "}
-                            –{" "}
-                            <SimpleEditableText
-                                text={job.endDate}
-                                onChange={(v) => updatePlain(index, "endDate", v)}
-                            />
+                            {editMode ? (
+                                <>
+                                    <SimpleEditableText
+                                        text={job.startDate}
+                                        onChange={(v) => updatePlain(index, "startDate", v)}
+                                    />{" "}
+                                    –{" "}
+                                    <SimpleEditableText
+                                        text={job.endDate}
+                                        onChange={(v) => updatePlain(index, "endDate", v)}
+                                    />
+                                </>
+                            ) : (
+                                `${job.startDate} – ${job.endDate}`
+                            )}
                         </span>
                     </div>
 
@@ -73,10 +87,25 @@ export default function WorkExperience() {
                                         style={style?.workExperience?.bulletIcon}
                                     />
                                 )}
-                                <EditableText
-                                    fragments={desc.fragments}
-                                    onChange={(f) => updateDescription(index, i, f)}
-                                />
+                                {editMode ? (
+                                    <EditableText
+                                        fragments={desc.fragments}
+                                        onChange={(f) => updateDescription(index, i, f)}
+                                    />
+                                ) : (
+                                    desc.fragments.map((frag, j) => (
+                                        <span
+                                            key={j}
+                                            style={{
+                                                fontWeight: frag.bold ? "bold" : "normal",
+                                                fontStyle: frag.italic ? "italic" : "normal",
+                                                textDecoration: frag.underline ? "underline" : "none"
+                                            }}
+                                        >
+                                            {frag.text}
+                                        </span>
+                                    ))
+                                )}
                             </li>
                         ))}
                     </ul>

@@ -1,86 +1,64 @@
-/* import { useResume } from "../../context/ResumeContext";
-import EditableText from "../../Features/ResumeEditor/EditableText";
-import SimpleEditableText from "../../Features/ResumeEditor/SimpleEditableText";
-
-export default function PersonalInfo() {
-    const { data, style } = useResume();
-
-    const updatePlain = (field, value) => {
-        data.personalInfo[field] = value;
-    };
-
-    const updateFormatted = (field, newFragments) => {
-        data.personalInfo[field].fragments = newFragments;
-    };
-
-    return (
-        <div className="personalInfo" style={style?.personalInfo?.box}>
-            <h1 style={style?.personalInfo?.name}>
-                <SimpleEditableText
-                    text={data.personalInfo.firstName}
-                    onChange={(v) => updatePlain("firstName", v)}
-                />{" "}
-                <SimpleEditableText
-                    text={data.personalInfo.lastName}
-                    onChange={(v) => updatePlain("lastName", v)}
-                />
-            </h1>
-            <h3 style={style?.personalInfo?.position}>
-                <SimpleEditableText
-                    text={data.personalInfo.position}
-                    onChange={(v) => updatePlain("position", v)}
-                />
-            </h3>
-            <p style={style?.personalInfo?.summary}>
-                <EditableText
-                    fragments={data.personalInfo.summary.fragments}
-                    onChange={(f) => updateFormatted("summary", f)}
-                />
-            </p>
-        </div>
-    );
-}
- */
-
 import { useResume } from "../../context/ResumeContext";
-import EditableText from "../../Features/ResumeEditor/EditableText";
 import SimpleEditableText from "../../Features/ResumeEditor/SimpleEditableText";
+import EditableText from "../../Features/ResumeEditor/EditableText";
 
-export default function PersonalInfo() {
-    const { data, style } = useResume();
+export default function PersonalInfo({ editMode }) {
+    const { data, updateField, style } = useResume();
 
-    const updatePlain = (field, value) => {
-        data.personalInfo[field] = value;
-    };
-
-    const updateFormatted = (field, newFragments) => {
-        data.personalInfo[field].fragments = newFragments;
-    };
+    const personal = data.personalInfo;
 
     return (
         <div className="personalInfo" style={style?.personalInfo?.box}>
             <h1 style={style?.personalInfo?.name}>
-                <SimpleEditableText
-                    text={data.personalInfo.firstName}
-                    onChange={(v) => updatePlain("firstName", v)}
-                />{" "}
-                <SimpleEditableText
-                    text={data.personalInfo.lastName}
-                    onChange={(v) => updatePlain("lastName", v)}
-                />
+                {editMode ? (
+                    <>
+                        <SimpleEditableText
+                            text={personal.firstName}
+                            onChange={(v) => updateField("personalInfo", "firstName", v)}
+                        />{" "}
+                        <SimpleEditableText
+                            text={personal.lastName}
+                            onChange={(v) => updateField("personalInfo", "lastName", v)}
+                        />
+                    </>
+                ) : (
+                    `${personal.firstName} ${personal.lastName}`
+                )}
             </h1>
+
             <h3 style={style?.personalInfo?.position}>
-                <SimpleEditableText
-                    text={data.personalInfo.position}
-                    onChange={(v) => updatePlain("position", v)}
-                />
+                {editMode ? (
+                    <SimpleEditableText
+                        text={personal.position}
+                        onChange={(v) => updateField("personalInfo", "position", v)}
+                    />
+                ) : (
+                    personal.position
+                )}
             </h3>
+
             <div style={style?.personalInfo?.summary}>
-                <EditableText
-                    fragments={data.personalInfo.summary.fragments}
-                    onChange={(f) => updateFormatted("summary", f)}
-                />
+                {editMode ? (
+                    <EditableText
+                        fragments={personal.summary?.fragments || []}
+                        onChange={(f) => updateField("personalInfo", "summary.fragments", f)}
+                    />
+                ) : (
+                    (personal.summary?.fragments || []).map((frag, i) => (
+                        <span
+                            key={i}
+                            style={{
+                                fontWeight: frag.bold ? "bold" : "normal",
+                                fontStyle: frag.italic ? "italic" : "normal",
+                                textDecoration: frag.underline ? "underline" : "none"
+                            }}
+                        >
+                            {frag.text}
+                        </span>
+                    ))
+                )}
             </div>
+
         </div>
     );
 }

@@ -14,7 +14,7 @@ import Avatar from './components/Avatar';
 import Language from './components/Language';
 import Awards from './components/Awards';
 import './ResumeRenderer.css'
-import { ResumeContext } from '../context/ResumeContext';
+import { ResumeContext, ResumeProvider } from '../context/ResumeContext';
 import templateStyles from '../data/templateStyles';
 
 const sectionComponents = {
@@ -33,44 +33,50 @@ const sectionComponents = {
     // awards: Awards
 };
 
-export default function ResumeRenderer({ templateId = 1, userData = mockUserData }) {
-    const template = templates.find(t => t.id === templateId);
-
+export default function ResumeRenderer({
+    template,
+    editMode,
+    selectedSection,
+    setSelectedSection,
+}) {
     if (!template) return <div>Invalid template selected.</div>;
 
-    const { layout } = template;
+    const { layout, id: templateId, grid } = template;
+
     const gridStyle = {
         display: 'grid',
-        gridTemplateColumns: template.grid.templateColumns,
-        gridTemplateRows: template.grid.templateRows,
-        columnGap: template.grid.columnGap,
-        rowGap: template.grid.rowGap,
+        gridTemplateColumns: grid.templateColumns,
+        gridTemplateRows: grid.templateRows,
+        columnGap: grid.columnGap,
+        rowGap: grid.rowGap,
     };
 
     return (
-        <ResumeContext.Provider value={{ data: userData, style: templateStyles[templateId] }}>
-            <div id="resume-view" style={gridStyle}>
-                {layout.areas.map(area => (
-                    <div
-                        key={area.name}
-                        style={{
-                            gridColumn: `${area.colStart} / ${area.colEnd}`,
-                            gridRow: `${area.rowStart} / ${area.rowEnd}`
-                        }}
-                    >
-                        {area.sections.map(sectionKey => {
-                            const SectionComponent = sectionComponents[sectionKey];
-                            const sectionData = userData[sectionKey];
+        <div id="resume-view" style={gridStyle}>
+            {layout.areas.map((area) => (
+                <div
+                    key={area.name}
+                    style={{
+                        gridColumn: `${area.colStart} / ${area.colEnd}`,
+                        gridRow: `${area.rowStart} / ${area.rowEnd}`,
+                    }}
+                >
+                    {area.sections.map((sectionKey) => {
+                        const SectionComponent = sectionComponents[sectionKey];
+                        if (!SectionComponent) return null;
 
-                            if (!SectionComponent || !sectionData) return null;
-
-                            return (
-                                <SectionComponent key={sectionKey} data={sectionData} />
-                            );
-                        })}
-                    </div>
-                ))}
-            </div>
-        </ResumeContext.Provider>
+                        return (
+                            <SectionComponent
+                                key={sectionKey}
+                                sectionKey={sectionKey}
+                                editMode={editMode}
+                                selectedSection={selectedSection}
+                                setSelectedSection={setSelectedSection}
+                            />
+                        );
+                    })}
+                </div>
+            ))}
+        </div>
     );
 }
