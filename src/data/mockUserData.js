@@ -7,37 +7,31 @@ const mockUserData = {
 
     contact: [
         {
-            title: "Email",
             icon: "email_icon_url",
             link: "jane.doe@example.com",
             textShown: "jane.doe@example.com",
         },
         {
-            title: "Phone",
             icon: "phone_icon_url",
             link: "+91 9876543210",
             textShown: "+91 9876543210",
         },
         {
-            title: "Address",
             icon: "address_icon_url",
             link: "123, Park Lane, Delhi, India",
             textShown: "123, Park Lane, Delhi, India",
         },
         {
-            title: "Portfolio",
             icon: "portfolio_icon_url",
             link: "https://jane-portfolio.netlify.app",
             textShown: "My Portfolio",
         },
         {
-            title: "GitHub",
             icon: "github_icon_url",
             link: "https://github.com/janeDoe",
             textShown: "GitHub Profile",
         },
         {
-            title: "LinkedIn",
             icon: "linkedin_icon_url",
             link: "https://linkedin.com/in/janeDoe",
             textShown: "LinkedIn Profile",
@@ -59,6 +53,8 @@ const mockUserData = {
             link: "https://github.com/janeDoe/weather-app",
             githubLink: "https://github.com/janeDoe/weather-app-code",
             date: "2023-04-15",
+            // startDate: "2017",
+            // endDate: "2019",
             description: [
                 "Built a weather forecast app using React and OpenWeather API.",
                 "Implemented city-based weather search functionality.",
@@ -216,17 +212,14 @@ const mockUserData = {
 
     languages: [
         {
-            id: "eng",
             title: "English",
             proficiency: "Fluent",
         },
         {
-            id: "spa",
             title: "Spanish",
             proficiency: "Intermediate",
         },
         {
-            id: "fre",
             title: "French",
             proficiency: "Basic",
         }
@@ -236,8 +229,8 @@ const mockUserData = {
 
     awards: [
         {
-            title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
-            date: 'Venture(USA)',
+            title: "Jury Member, Venture Cup Entrepreneurship Competition(2019)",
+            date: "2023-01-20",
             description: "Served as a jury member evaluating entrepreneurial startup ideas in the competition."
             /* 
                 description: [
@@ -248,8 +241,8 @@ const mockUserData = {
             */
         },
         {
-            title: 'Jury Member, Venture Cup Entrepreneurship Competition(2020)',
-            date: 'Venture(USA)',
+            title: "Jury Member, Venture Cup Entrepreneurship Competition(2020)",
+            date: "2023-01-05",
             description: "Contributed insights on evaluating innovation and market viability for startups."
         }
     ]
