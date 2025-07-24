@@ -1,75 +1,80 @@
 const mockUserData = {
-    personalInfo: {
-        firstName: "Jane",
-        lastName: "Doe",
-        position: "Web Developer",
-        summary: {
-            fragments: [
-                {
-                    text: "A web developer who designs and builds interactive websites.",
-                    bold: false,
-                    italic: false,
-                    underline: false
-                }
-            ]
+    firstName: "Jane",
+    lastName: "Doe",
+    position: "Web Developer",
+    profilePhoto: "https://media-public.canva.com/p7zgk/MAEugcp7zgk/1/t.jpg",
+    summary: "Passionate web developer with expertise in React, JavaScript, and creating beautiful, user-centric web applications.",
+
+    contact: [
+        {
+            title: "Email",
+            icon: "email_icon_url",
+            link: "jane.doe@example.com",
+            textShown: "jane.doe@example.com",
+        },
+        {
+            title: "Phone",
+            icon: "phone_icon_url",
+            link: "+91 9876543210",
+            textShown: "+91 9876543210",
+        },
+        {
+            title: "Address",
+            icon: "address_icon_url",
+            link: "123, Park Lane, Delhi, India",
+            textShown: "123, Park Lane, Delhi, India",
+        },
+        {
+            title: "Portfolio",
+            icon: "portfolio_icon_url",
+            link: "https://jane-portfolio.netlify.app",
+            textShown: "My Portfolio",
+        },
+        {
+            title: "GitHub",
+            icon: "github_icon_url",
+            link: "https://github.com/janeDoe",
+            textShown: "GitHub Profile",
+        },
+        {
+            title: "LinkedIn",
+            icon: "linkedin_icon_url",
+            link: "https://linkedin.com/in/janeDoe",
+            textShown: "LinkedIn Profile",
         }
-    },
-    
-    contact:{
-        email: "janeDoe.profile@example.com",
-        phoneNo: "+91 9876543210",
-        address: "123, Park Lane, Delhi, India",
-        portfolio: "https://janeDoe-portfolio.netlify.app",
-        github: "https://github.com/janeDoe",
-        linkedin: "https://linkedin.com/in/janeDoe",
-        skype: "janeDoe.profile",
+    ],
+
+    skills: {
+        "Programming Languages": ["JavaScript", "Python", "C++", "Java"],
+        "Frontend Development": ["React", "HTML5", "CSS3", "SASS", "Bootstrap"],
+        "Backend Development": ["Node.js", "Express", "MongoDB"],
+        "Version Control": ["Git", "GitHub"],
     },
 
-    skills: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
+    // skills: ["JavaScript", "React", "HTML5", "CSS3", "Git & GitHub"],
 
     projects: [
         {
             title: "Weather App",
-            link: "https://weather-app.netlify.app",
-            githubLink: "https://github.com/janeDoe/weather-app",
+            link: "https://github.com/janeDoe/weather-app",
+            githubLink: "https://github.com/janeDoe/weather-app-code",
+            date: "2023-04-15",
             description: [
-                {
-                    id: "proj1",
-                    fragments: [
-                        { text: "Built a weather forecast app using React and OpenWeather API.", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "proj2",
-                    fragments: [
-                        { text: "Implemented search functionality by city name and geolocation.", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "proj3",
-                    fragments: [
-                        { text: "Displayed real-time temperature, humidity, and weather icons.", bold: false, italic: false, underline: false }
-                    ]
-                }
-            ]
+                "Built a weather forecast app using React and OpenWeather API.",
+                "Implemented city-based weather search functionality.",
+                "Displayed real-time weather information such as temperature, humidity, and wind speed.",
+            ],
+            //description: "Built a weather forecast app using React and OpenWeather API. Implemented city-based weather search functionality.Displayed real-time weather information such as temperature, humidity, and wind speed."
         },
         {
-            title: "Portfolio Website",
-            link: "https://janeDoe-portfolio.netlify.app",
+            title: "Personal Portfolio",
+            link: "https://jane-portfolio.netlify.app",
             githubLink: "https://github.com/janeDoe/portfolio",
+            date: "2022-12-01",
             description: [
-                {
-                    id: "proj1",
-                    fragments: [
-                        { text: "Designed and developed a responsive portfolio site.", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "proj2",
-                    fragments: [
-                        { text: "Used React, GSAP animations, and deployed on Netlify.", bold: false, italic: false, underline: false }
-                    ]
-                }
+                "Designed and developed my personal portfolio website.",
+                "Focused on responsive design with mobile-first approach.",
+                "Showcased various personal projects and achievements.",
             ]
         }
     ],
@@ -77,29 +82,20 @@ const mockUserData = {
     achievements: [
         {
             title: "Top 5 Finalist - Hackathon",
-            description: {
-                fragments: [
-                    {
-                        text: "Built a disaster alert app during a 24-hour national hackathon.",
-                        bold: false,
-                        italic: false,
-                        underline: false
-                    }
+            date: "2023-03-20",
+            description: "Built a disaster alert app during a 24-hour hackathon. The app sends alerts based on real-time disaster data from multiple sources.",
+            /* 
+                description: [
+                    "Designed and developed my personal portfolio website.",
+                    "Focused on responsive design with mobile-first approach.",
+                    "Showcased various personal projects and achievements.",
                 ]
-            }
+            */
         },
         {
             title: "Open Source Contributor",
-            description: {
-                fragments: [
-                    {
-                        text: "Contributed to documentation and bug fixes in multiple GitHub projects.",
-                        bold: false,
-                        italic: false,
-                        underline: false
-                    }
-                ]
-            }
+            date: "2022-06-12",
+            description: "Contributed to various open-source repositories by fixing bugs, improving documentation, and developing new features.",
         }
     ],
 
@@ -111,19 +107,11 @@ const mockUserData = {
             startDate: "2017",
             endDate: "2019",
             description: [
-                {
-                    id: "edu1",
-                    fragments: [
-                        { text: "Scored 89% in Class 12 (CBSE Board).", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "edu2",
-                    fragments: [
-                        { text: "Top 5% of graduating class.", bold: false, italic: false, underline: false }
-                    ]
-                }
+                "Scored 8.9 CGPA in Class 10",
+                "Top 5% of graduating class",
+                "Participated in various extracurricular activities like coding competitions and debates."
             ]
+            //description: "Built a weather forecast app using React and OpenWeather API. Implemented city-based weather search functionality.Displayed real-time weather information such as temperature, humidity, and wind speed."
         },
         {
             school: "XYZ Institute of Technology",
@@ -132,69 +120,37 @@ const mockUserData = {
             startDate: "2019",
             endDate: "2023",
             description: [
-                {
-                    id: "edu1",
-                    fragments: [
-                        { text: "Graduated with a CGPA of 8.9.", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "edu2",
-                    fragments: [
-                        { text: "Completed a capstone project on smart irrigation system.", bold: false, italic: false, underline: false }
-                    ]
-                }
+                "Scored 8.9 CGPA in overall degree.",
+                "Top 10% in the department.",
+                "Led multiple student groups in hackathons and coding events."
             ]
         }
     ],
 
-    workExperience: [
+    experience: [
         {
             role: "Frontend Developer Intern",
             organization: "TechNova Pvt Ltd",
             location: "Remote",
-            startDate: "2023",
-            endDate: "2024",
+            startDate: "2023-06-01",
+            endDate: "2024-06-01",
             description: [
-                {
-                    id: "desc1",
-                    fragments: [
-                        { text: "Built reusable React components for a dashboard UI.", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "desc2",
-                    fragments: [
-                        { text: "Integrated REST APIs and managed state with Redux.", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "desc3",
-                    fragments: [
-                        { text: "Improved UI performance with memoization and lazy loading.", bold: false, italic: false, underline: false }
-                    ]
-                }
+                "Developed reusable React components to be integrated into multiple parts of the project.",
+                "Worked with APIs to retrieve and display dynamic content on the frontend.",
+                "Collaborated with design team to implement UI/UX changes based on feedback."
             ]
+            //description: "Built a weather forecast app using React and OpenWeather API. Implemented city-based weather search functionality.Displayed real-time weather information such as temperature, humidity, and wind speed."
         },
         {
-            role: "Open Source Contributor",
-            organization: "GirlScript Summer of Code",
+            role: "Frontend Developer Intern",
+            organization: "TechNova Pvt Ltd",
             location: "Remote",
-            startDate: "2022",
-            endDate: "2022",
+            startDate: "2023-01-01",
+            endDate: "2023-05-01",
             description: [
-                {
-                    id: "desc1",
-                    fragments: [
-                        { text: "Fixed accessibility issues in documentation.", bold: false, italic: false, underline: false }
-                    ]
-                },
-                {
-                    id: "desc2",
-                    fragments: [
-                        { text: "Added unit tests with Jest and improved test coverage.", bold: false, italic: false, underline: false }
-                    ]
-                }
+                "Developed landing pages and interactive user interfaces using React.",
+                "Optimized the performance of the app by implementing lazy loading and code splitting.",
+                "Worked with Git for version control and collaborated on GitHub with other developers."
             ]
         }
     ],
@@ -203,78 +159,98 @@ const mockUserData = {
         {
             title: "React - Frontend Library",
             organization: "freeCodeCamp",
-            date: "2023"
+            date: "2023-07-15",
         },
         {
             title: "Responsive Web Design",
             organization: "Coursera",
-            date: "2022"
+            date: "2022-05-10",
+            //description: "Built a weather forecast app using React and OpenWeather API. Implemented city-based weather search functionality.Displayed real-time weather information such as temperature, humidity, and wind speed."
         }
     ],
 
     organizations: [
         {
             title: "American Management Association",
-            date: "2015–Present"
+            startDate: "2023-01-01",
+            endDate: "2023-05-01",
+            description: "Active member, participated in workshops on leadership and management."
         },
         {
             title: "Association of Private Enterprise Education",
-            date: "2014–Present"
+            startDate: "2023-01-01",
+            endDate: "2023-05-01",
+            description: "Engaged in initiatives promoting private education and entrepreneurship."
+            /* 
+                description: [
+                    "Designed and developed my personal portfolio website.",
+                    "Focused on responsive design with mobile-first approach.",
+                    "Showcased various personal projects and achievements.",
+                ]
+            */
         }
     ],
 
     strengths: [
         {
             title: "Strategic Planning",
-            description: {
-                fragments: [
-                    {
-                        text: "Proficient in identifying goals and setting long-term strategies for scalable web solutions.",
-                        bold: false,
-                        italic: false,
-                        underline: false
-                    }
-                ]
-            }
+            description: "Able to think ahead and plan for future goals by considering long-term outcomes and constraints."
+
         },
         {
             title: "Collaboration",
-            description: {
-                fragments: [
-                    {
-                        text: "Experienced in working within Agile teams and contributing effectively to group efforts.",
-                        bold: false,
-                        italic: false,
-                        underline: false
-                    }
-                ]
-            }
+            description: "Works well in teams and fosters a positive and productive team environment."
         },
         {
             title: "Media Relations",
-            description: {
-                fragments: [
-                    {
-                        text: "Comfortable with presenting technical content to non-technical audiences.",
-                        bold: false,
-                        italic: false,
-                        underline: false
-                    }
+            description: "Experienced in communicating with various stakeholders and handling media inquiries."
+            /* 
+                description: [
+                    "Designed and developed my personal portfolio website.",
+                    "Focused on responsive design with mobile-first approach.",
+                    "Showcased various personal projects and achievements.",
                 ]
-            }
+            */
         }
     ],
 
-    language: ["English", "Spanish", "French"],
+    languages: [
+        {
+            id: "eng",
+            title: "English",
+            proficiency: "Fluent",
+        },
+        {
+            id: "spa",
+            title: "Spanish",
+            proficiency: "Intermediate",
+        },
+        {
+            id: "fre",
+            title: "French",
+            proficiency: "Basic",
+        }
+    ],
+
+    // language: ["English", "Spanish", "French"],
 
     awards: [
         {
-            title: "Jury Member - Venture Cup Entrepreneurship Competition",
-            date: "2019"
+            title: 'Jury Member, Venture Cup Entrepreneurship Competition(2019)',
+            date: 'Venture(USA)',
+            description: "Served as a jury member evaluating entrepreneurial startup ideas in the competition."
+            /* 
+                description: [
+                    "Designed and developed my personal portfolio website.",
+                    "Focused on responsive design with mobile-first approach.",
+                    "Showcased various personal projects and achievements.",
+                ]
+            */
         },
         {
-            title: "Women in Tech Scholarship - Google India",
-            date: "2022"
+            title: 'Jury Member, Venture Cup Entrepreneurship Competition(2020)',
+            date: 'Venture(USA)',
+            description: "Contributed insights on evaluating innovation and market viability for startups."
         }
     ]
 };
